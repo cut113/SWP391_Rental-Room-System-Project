@@ -188,7 +188,7 @@ public class AccountDAO implements Serializable {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO TaiKhoan \n"
-                        + "VALUES (?,?,?,?,?,?,?)";
+                        + "VALUES (?,?,?,?,?,?,?,?)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, username);
                 ps.setString(2, password);
@@ -205,6 +205,41 @@ public class AccountDAO implements Serializable {
                     return true;
                 }
                 System.out.println("Add user fail");
+            }
+        } finally {
+            if (ps != null){
+                ps.close();
+            }
+            if (con != null){
+                con.close();
+            }
+        }
+        return false;
+    }
+        
+        public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception{
+        Connection con = null;
+        PreparedStatement ps = null;
+
+        try{
+            con = new DBUtils().makeConnection();
+            if (con != null) {
+                String sql = "INSERT INTO TaiKhoan \n"
+                        + "VALUES (?,?,?,?,?,?,2,True)";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ps.setString(3, fullname);
+                ps.setString(4, SDT);
+                ps.setString(5, Email);
+                ps.setString(6, DiaChi);
+
+                int row = ps.executeUpdate();
+                if (row>0){
+                    System.out.println("Register account successfully");
+                    return true;
+                }
+                System.out.println("Register user fail");
             }
         } finally {
             if (ps != null){
