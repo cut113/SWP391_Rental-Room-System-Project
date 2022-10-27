@@ -1,3 +1,4 @@
 /RRS/nbproject/private/
 /RRS/build/
-/RRS/src/java/utils/
+.DS_store
+!/RRS/src/java/utils/
