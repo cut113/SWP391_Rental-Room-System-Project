@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
                     response.sendRedirect("ShowServletAdmin");
-     //               System.out.println("Da toi dc day r");
+     //               System.out.println("Da toi dc day r"); co the co the co the
                 }
             }
         } catch (Exception e) {
