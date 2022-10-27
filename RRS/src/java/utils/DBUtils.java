@@ -16,7 +16,7 @@ public class DBUtils {
     public static Connection makeConnection() throws Exception{
         
         String connectionUrl="jdbc:sqlserver://localhost:1433;"
-                + "databaseName=TimPhongTro;User=sa;Password=123456777";
+                + "databaseName=TimPhongTro;User=sa;Password=123456";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection(connectionUrl);
                 return con;
