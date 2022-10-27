@@ -1,5 +1,20 @@
-/RRS/nbproject/private/
-/RRS/build/
+### NetBeans template
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Example user template
 .DS_store
+/RRS/src/java/utils/DBUtils.java
+
+# IntelliJ project files
 .idea
-DBUtils.java
+*.iml
+out
+gen
+
