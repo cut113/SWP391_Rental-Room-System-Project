@@ -14,7 +14,7 @@ import java.sql.DriverManager;
  */
 public class DBUtils {
     public static Connection makeConnection() throws Exception{
-        ///co ignore dc ko?
+        ///co ignore dc ko? ????????????
         String connectionUrl="jdbc:sqlserver://localhost:1433;"
                 + "databaseName=TimPhongTro;User=sa;Password=123456";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
