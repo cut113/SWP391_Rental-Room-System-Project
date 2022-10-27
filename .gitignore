@@ -10,11 +10,11 @@ nbdist/
 
 ### Example user template
 .DS_store
-/RRS/src/java/utils/DBUtils.java
+**/src/java/utils/DBUtils.java
 
 # IntelliJ project files
 .idea
 *.iml
 out
 gen
-
+/lib/
