@@ -1,4 +1,5 @@
 /RRS/nbproject/private/
 /RRS/build/
 .DS_store
-!/RRS/src/java/utils/
+.idea
+DBUtils.java
