@@ -219,7 +219,7 @@ public class AccountDAO implements Serializable {
         return false;
     }
         
-        public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception{
+        public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi) throws Exception{
         Connection con = null;
         PreparedStatement ps = null;
 
@@ -227,7 +227,7 @@ public class AccountDAO implements Serializable {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO TaiKhoan \n"
-                        + "VALUES (?,?,?,?,?,?,2,True)";
+                        + "VALUES (?,?,?,?,?,?,2,1)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, username);
                 ps.setString(2, password);

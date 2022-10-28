@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        request.getRequestDispatcher("view/managers/login.jsp").forward(request, response);
+        request.getRequestDispatcher("view/managers/dang-nhap.jsp").forward(request, response);
     }
 
     @Override
@@ -36,17 +36,17 @@ public class LoginServlet extends HttpServlet {
         AccountDAO dao = new AccountDAO();
         try {
             AccountDTO account = dao.searchUser(username, password);
-            System.out.println("Account" + account.getUsername());
+            
             if (account == null) {
                 String error = "User or password is empty or error";
                 request.setAttribute("ERROR", error);
-                RequestDispatcher rd = request.getRequestDispatcher("view/managers.login.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("view/managers/dang-nhap.jsp");
                 rd.forward(request, response);
             } else {
                 if (!account.isTrangThai()) {
                     String error = "Account is disabled or deleted";
                     request.setAttribute("ERROR", error);
-                    RequestDispatcher rd = request.getRequestDispatcher("view/managers.login.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("view/managers/dang-nhap.jsp");
                     rd.forward(request, response);
                 } else if (account.getPhanQuyen() != 0) {
                     HttpSession session = request.getSession();
