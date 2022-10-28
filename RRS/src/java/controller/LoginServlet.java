@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("view/managers/login.jsp").forward(request, response);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             if (account == null) {
                 String error = "User or password is empty or error";
                 request.setAttribute("ERROR", error);
-                RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("view/managers/login.jsp");
                 rd.forward(request, response);
             } else {
                 if (!account.isTrangThai()) {
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
-                    response.sendRedirect("ShowServletAdmin");
+                    response.sendRedirect("view/managers/index.jsp");
      //               System.out.println("Da toi dc day r"); co the co the co the
                 }
             }
