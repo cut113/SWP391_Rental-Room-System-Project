@@ -2,6 +2,7 @@
 package model;
 
 public class AccountDTO {
+    int userID;
     String username;
     String password;
     String fullname;
@@ -10,8 +11,9 @@ public class AccountDTO {
     String DiaChi;
     int PhanQuyen;
     boolean TrangThai;
-    
-    public AccountDTO(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) {
+
+    public AccountDTO(int userID, String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) {
+        this.userID = userID;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
@@ -22,8 +24,18 @@ public class AccountDTO {
         this.TrangThai = TrangThai;
     }
     
+    
+    
 
     public AccountDTO() {
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getUsername() {
@@ -89,6 +101,8 @@ public class AccountDTO {
     public void setTrangThai(boolean TrangThai) {
         this.TrangThai = TrangThai;
     }
+
+   
     
     
 }

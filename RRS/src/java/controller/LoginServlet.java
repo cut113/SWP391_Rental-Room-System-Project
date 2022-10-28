@@ -1,7 +1,6 @@
 package controller;
 
 import dao.AccountDAO;
-import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.AccountDTO;
+
 
 public class LoginServlet extends HttpServlet {
 
@@ -36,17 +36,17 @@ public class LoginServlet extends HttpServlet {
         AccountDAO dao = new AccountDAO();
         try {
             AccountDTO account = dao.searchUser(username, password);
-  //          System.out.println("Account" + account.getUsername());
+            System.out.println("Account" + account.getUsername());
             if (account == null) {
                 String error = "User or password is empty or error";
                 request.setAttribute("ERROR", error);
-                RequestDispatcher rd = request.getRequestDispatcher("view/managers/login.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("view/managers.login.jsp");
                 rd.forward(request, response);
             } else {
                 if (!account.isTrangThai()) {
                     String error = "Account is disabled or deleted";
                     request.setAttribute("ERROR", error);
-                    RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("view/managers.login.jsp");
                     rd.forward(request, response);
                 } else if (account.getPhanQuyen() != 0) {
                     HttpSession session = request.getSession();
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
                     response.sendRedirect("view/managers/index.jsp");
-     //               System.out.println("Da toi dc day r"); co the co the co the
+     //               System.out.println("Da toi dc day r");
                 }
             }
         } catch (Exception e) {

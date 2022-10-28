@@ -26,6 +26,7 @@ public class AccountDAO implements Serializable {
                 stm = con.prepareStatement(sql);
                 rs = stm.executeQuery();
                 while (rs.next()) {
+                    int userID = rs.getInt("MaUser");
                     String username = rs.getString("Username");
                     String password = rs.getString("Password");
                     String fullname = rs.getString("Fullname");
@@ -34,7 +35,7 @@ public class AccountDAO implements Serializable {
                     String DiaChi = rs.getString("DiaChi");
                     int PhanQuyen = rs.getInt("PhanQuyen");
                     boolean TrangThai = rs.getBoolean("TrangThai");
-                    AccountDTO cl = new AccountDTO(username, password, fullname, SDT, Email, DiaChi, PhanQuyen, TrangThai);
+                    AccountDTO cl = new AccountDTO(userID, username, password, fullname, SDT, Email, DiaChi, PhanQuyen, TrangThai);
                     listClass.add(cl);
                 }
                 return listClass;
@@ -69,7 +70,7 @@ public class AccountDAO implements Serializable {
                 stm.setString(2, password);
                 rs = stm.executeQuery();
                 while (rs.next()) {
-                    return new AccountDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getBoolean(8));
+                    return new AccountDTO(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getBoolean(9));
                 }
             }
         } catch (Exception e) {
@@ -120,6 +121,7 @@ public class AccountDAO implements Serializable {
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
+                    int userID = rs.getInt("MaUser");
                     String password = rs.getString("Password");
                     String fullname = rs.getString("Fullname");
                     String SDT = rs.getString("SDT");
@@ -127,7 +129,7 @@ public class AccountDAO implements Serializable {
                     String DiaChi = rs.getString("DiaChi");
                     int PhanQuyen = rs.getInt("PhanQuyen");
                     boolean TrangThai = rs.getBoolean("TrangThai");
-                    return new AccountDTO(username, password, fullname, SDT, Email, DiaChi, PhanQuyen, TrangThai);
+                    return new AccountDTO(userID, username, password, fullname, SDT, Email, DiaChi, PhanQuyen, TrangThai);
                 }
             }
         }finally {
