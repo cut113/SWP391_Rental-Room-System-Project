@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        request.getRequestDispatcher("view/managers/dang-nhap.jsp").forward(request, response);
+        request.getRequestDispatcher("dang-nhap.jsp").forward(request, response);
     }
 
     @Override
@@ -40,13 +40,13 @@ public class LoginServlet extends HttpServlet {
             if (account == null) {
                 String error = "User or password is empty or error";
                 request.setAttribute("ERROR", error);
-                RequestDispatcher rd = request.getRequestDispatcher("view/managers/dang-nhap.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("dang-nhap.jsp");
                 rd.forward(request, response);
             } else {
                 if (!account.isTrangThai()) {
                     String error = "Account is disabled or deleted";
                     request.setAttribute("ERROR", error);
-                    RequestDispatcher rd = request.getRequestDispatcher("view/managers/dang-nhap.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("dang-nhap.jsp");
                     rd.forward(request, response);
                 } else if (account.getPhanQuyen() != 0) {
                     HttpSession session = request.getSession();
@@ -55,8 +55,8 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
-                    response.sendRedirect("view/managers/index.jsp");
-     //               System.out.println("Da toi dc day r");
+                    response.sendRedirect("ListUserServlet");
+                    System.out.println("Da toi dc day r");
                 }
             }
         } catch (Exception e) {

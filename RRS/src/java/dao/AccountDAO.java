@@ -31,7 +31,7 @@ public class AccountDAO implements Serializable {
                     String password = rs.getString("Password");
                     String fullname = rs.getString("Fullname");
                     String SDT = rs.getString("SDT");
-                    String Email = rs.getString("Email");
+                    String Email = rs.getString("EmailLienHe");
                     String DiaChi = rs.getString("DiaChi");
                     int PhanQuyen = rs.getInt("PhanQuyen");
                     boolean TrangThai = rs.getBoolean("TrangThai");
