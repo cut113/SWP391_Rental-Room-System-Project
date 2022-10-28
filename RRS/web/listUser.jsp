@@ -10,9 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="resources/css/style.css"/>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>User List!</h1>
         <table border="1px solid black">
             <tr>
                 <td>ID</td>
