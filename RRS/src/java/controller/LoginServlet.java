@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
                     request.setAttribute("ERROR", error);
                     RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
                     rd.forward(request, response);
-                } else if (account.getPhanQuyen() != 1) {
+                } else if (account.getPhanQuyen() != 0) {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
                     response.sendRedirect("ShowServletUser");
