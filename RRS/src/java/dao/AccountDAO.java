@@ -55,8 +55,6 @@ public class AccountDAO implements Serializable {
         return null;
     }
 
-   
-
     public AccountDTO searchUser(String username, String password) {
         Connection con = null;
         PreparedStatement stm = null;
@@ -70,7 +68,7 @@ public class AccountDAO implements Serializable {
                 stm.setString(2, password);
                 rs = stm.executeQuery();
                 while (rs.next()) {
-                    return new AccountDTO(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getBoolean(9));
+                    return new AccountDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getBoolean(9));
                 }
             }
         } catch (Exception e) {
@@ -78,36 +76,36 @@ public class AccountDAO implements Serializable {
         }
         return null;
     }
-        public boolean deleteAccount(String username) throws Exception{
+
+    public void deleteAccount(String username) throws Exception {
         Connection con = null;
         PreparedStatement stm = null;
 
-        try{
-            con = new DBUtils().makeConnection();
+        try {
+            con = DBUtils.makeConnection();
             if (con != null) {
-                String sql = "DELETE TaiKhoan \n"
-                        +"WHERE Username=?";
+                System.out.println(username);
+                String sql = "update dbo.TaiKhoan set TrangThai = 0 where UserName = ?";
                 stm = con.prepareStatement(sql);
                 stm.setString(1, username);
 
                 int row = stm.executeUpdate();
-                if (row>0){
+                if (row > 0) {
                     System.out.println("Delete user success");
-                    return true;
                 }
                 System.out.println("Delete user fail");
             }
         } finally {
-            if (stm != null){
+            if (stm != null) {
                 stm.close();
             }
-            if (con != null){
+            if (con != null) {
                 con.close();
             }
         }
-        return false;
     }
-        public AccountDTO getAccountByUserName(String username) throws Exception{
+
+    public AccountDTO getAccountByUserName(String username) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -132,24 +130,25 @@ public class AccountDAO implements Serializable {
                     return new AccountDTO(userID, username, password, fullname, SDT, Email, DiaChi, PhanQuyen, TrangThai);
                 }
             }
-        }finally {
-            if (rs != null){
+        } finally {
+            if (rs != null) {
                 rs.close();
             }
-            if (ps != null){
+            if (ps != null) {
                 ps.close();
             }
-            if (con != null){
+            if (con != null) {
                 con.close();
             }
         }
         return null;
     }
-        public boolean updateAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception{
+
+    public void updateAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
-        try{
+        try {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "UPDATE TaiKhoan \n"
@@ -166,27 +165,26 @@ public class AccountDAO implements Serializable {
                 ps.setString(8, username);
 
                 int row = ps.executeUpdate();
-                if (row>0){
+                if (row > 0) {
                     System.out.println("Update user success");
-                    return true;
                 }
                 System.out.println("Update user fail");
             }
         } finally {
-            if (ps != null){
+            if (ps != null) {
                 ps.close();
             }
-            if (con != null){
+            if (con != null) {
                 con.close();
             }
         }
-        return false;
     }
-        public boolean addAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception{
+
+    public boolean addAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
-        try{
+        try {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO TaiKhoan \n"
@@ -202,28 +200,28 @@ public class AccountDAO implements Serializable {
                 ps.setBoolean(8, TrangThai);
 
                 int row = ps.executeUpdate();
-                if (row>0){
+                if (row > 0) {
                     System.out.println("Add account successfully");
                     return true;
                 }
                 System.out.println("Add user fail");
             }
         } finally {
-            if (ps != null){
+            if (ps != null) {
                 ps.close();
             }
-            if (con != null){
+            if (con != null) {
                 con.close();
             }
         }
         return false;
     }
-        
-        public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi) throws Exception{
+
+    public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
-        try{
+        try {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO TaiKhoan \n"
@@ -237,20 +235,42 @@ public class AccountDAO implements Serializable {
                 ps.setString(6, DiaChi);
 
                 int row = ps.executeUpdate();
-                if (row>0){
+                if (row > 0) {
                     System.out.println("Register account successfully");
                     return true;
                 }
                 System.out.println("Register user fail");
             }
         } finally {
-            if (ps != null){
+            if (ps != null) {
                 ps.close();
             }
-            if (con != null){
+            if (con != null) {
                 con.close();
             }
         }
         return false;
     }
+
+    public AccountDTO getUser(String userName) {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                String sql = "select * from TaiKhoan where Username = ?";
+                stm = con.prepareStatement(sql);
+                stm.setString(1, userName);
+                rs = stm.executeQuery();
+                while (rs.next()) {
+                    return new AccountDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8), rs.getBoolean(9));
+                }
+            }
+        } catch (Exception e) {
+
+        }
+        return null;
+    }
+
 }

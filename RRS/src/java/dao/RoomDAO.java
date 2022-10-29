@@ -36,15 +36,15 @@ public class RoomDAO {
                     int maPhong = rs.getInt("MaPhong");
                     String tieuDe = rs.getString("TieuDe");
                     String Loai = rs.getString("Loai");
-                    String LienHe = rs.getString("LienHe");
+                    String lienHe = rs.getString("LienHe");
                     String SDT = rs.getString("SDT");
-                    int DienTich = rs.getInt("DienTich");
-                    float GiaThue = rs.getFloat("GiaThue");
-                    String DiaChi = rs.getString("DiaChi");
-                    String GhiChu = rs.getString("GhiChu");
+                    int dienTich = rs.getInt("DienTich");
+                    float giaThue = rs.getFloat("GiaThue");
+                    String diaChi = rs.getString("DiaChi");
+                    String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
                     int maUser = rs.getInt("MaUser");
-                    RoomDTO dto = new RoomDTO(maPhong, tieuDe ,Loai,LienHe, SDT, DienTich, GiaThue, DiaChi, GhiChu, maDuong, maUser);
+                    RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe,Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser);
                     listStudents.add(dto);
                 }
                 return listStudents;

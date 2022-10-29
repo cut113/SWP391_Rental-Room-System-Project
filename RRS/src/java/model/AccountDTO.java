@@ -7,10 +7,10 @@ public class AccountDTO {
     String password;
     String fullname;
     String SDT;
-    String Email;
-    String DiaChi;
-    int PhanQuyen;
-    boolean TrangThai;
+    String email;
+    String diaChi;
+    int phanQuyen;
+    boolean trangThai;
 
     public AccountDTO(int userID, String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) {
         this.userID = userID;
@@ -18,10 +18,10 @@ public class AccountDTO {
         this.password = password;
         this.fullname = fullname;
         this.SDT = SDT;
-        this.Email = Email;
-        this.DiaChi = DiaChi;
-        this.PhanQuyen = PhanQuyen;
-        this.TrangThai = TrangThai;
+        this.email = Email;
+        this.diaChi = DiaChi;
+        this.phanQuyen = PhanQuyen;
+        this.trangThai = TrangThai;
     }
     
     
@@ -71,35 +71,35 @@ public class AccountDTO {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
     public String getDiaChi() {
-        return DiaChi;
+        return diaChi;
     }
 
     public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
+        this.diaChi = DiaChi;
     }
 
     public int getPhanQuyen() {
-        return PhanQuyen;
+        return phanQuyen;
     }
 
     public void setPhanQuyen(int PhanQuyen) {
-        this.PhanQuyen = PhanQuyen;
+        this.phanQuyen = PhanQuyen;
     }
 
     public boolean isTrangThai() {
-        return TrangThai;
+        return trangThai;
     }
 
     public void setTrangThai(boolean TrangThai) {
-        this.TrangThai = TrangThai;
+        this.trangThai = TrangThai;
     }
 
    
