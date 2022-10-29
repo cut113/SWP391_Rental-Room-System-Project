@@ -29,8 +29,8 @@
                     </div>
                     <div class="pull-right">                
                         <div class="user_welcome">
-                            <a class="btn btn-login" href="<c:url value="/view/managers/dang-ky.jsp"/>"><i class="fa fa-user-plus"></i> Đăng ký</a>
-                            <a class="btn btn-login" href="<c:url value="/view/managers/dang-nhap.jsp"/>"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+                            <a class="btn btn-login" href="<c:url value="dang-ky.jsp"/>"><i class="fa fa-user-plus"></i> Đăng ký</a>
+                            <a class="btn btn-login" href="<c:url value="dang-nhap.jsp"/>"><i class="fa fa-sign-in"></i> Đăng nhập</a>
                         </div>
                     </div>
                 </div>

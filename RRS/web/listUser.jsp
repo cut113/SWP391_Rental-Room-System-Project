@@ -58,8 +58,7 @@
                 </tr>
                 
             </c:forEach>
-                
-        </table>
+                <h1>Room List</h1>
         <c:url value="LogoutServlet" var="Logout">
         </c:url>
         <a href="${Logout}"><input type="button" value="Logout"></a>
