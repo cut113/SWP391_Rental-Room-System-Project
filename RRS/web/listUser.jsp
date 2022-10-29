@@ -26,7 +26,7 @@
                 <td>Email</td>
                 <td>DiaChi</td>
                 <td>PhanQuyen</td>
-                <td>TrangThai</td>
+                <td>TrangThaiiiii</td>
 
             </tr>
             <c:forEach items="${requestScope.RESULT1}" var="user">
