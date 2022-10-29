@@ -38,31 +38,7 @@ public class ListUserServlet extends HttpServlet {
             
             System.out.println("CUUUUUU");
             
-            for (AccountDTO items : result1) {
-                System.out.println("Ten " + items.getUserID());
-                System.out.println("Ten " + items.getUsername());
-                System.out.println("Ten " + items.getPassword());
-                System.out.println("Ten " + items.getFullname());
-                System.out.println("Ten " + items.getSDT());
-                System.out.println("Ten " + items.getEmail());
-                System.out.println("Ten " + items.getDiaChi());
-                System.out.println("Ten " + items.getPhanQuyen());
-                System.out.println("Ten " + items.isTrangThai());
-            }
-            for (RoomDTO items : result2){
-                System.out.println("Ten " + items.getMaPhong());
-                System.out.println("Ten " + items.getTieude());
-                System.out.println("Ten " + items.getLienHe());
-                System.out.println("Ten " + items.getLoai());
-                
-                System.out.println("Ten " + items.getSDT());
-                System.out.println("Ten " + items.getDienTich());
-                System.out.println("Ten " + items.getGiaThue());
-                System.out.println("Ten " + items.getDiaChi());
-                System.out.println("Ten " + items.getGhiChu());
-                System.out.println("Ten " + items.getMaDuong());
-                System.out.println("Ten " + items.getMaUser());
-            }
+          
             
             request.setAttribute("RESULT1", result1);
             request.setAttribute("RESULT2", result2);

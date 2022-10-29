@@ -145,22 +145,22 @@ public class RoomDAO {
         return false;
     }
 
-    public boolean deleteProductByID(int productID) throws Exception {
+    public boolean deleteRoom(int maphong) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
         try {
             con = new DBUtils().makeConnection();
             if (con != null) {
-                String sql = "DELETE FROM PRODUCT \n"
-                        + "WHERE ProductID=?";
+                String sql = "DELETE FROM PhongTro \n"
+                        + "WHERE Maphong=?";
                 ps = con.prepareStatement(sql);
-                ps.setInt(1, productID);
+                ps.setInt(1, maphong);
 
                 int row = ps.executeUpdate();
                 if (row > 0) {
                     System.out.println("Delete product success");
-                    return true;
+                    return true; 
                 }
                 System.out.println("Delete product fail");
             }
@@ -175,27 +175,30 @@ public class RoomDAO {
         return false;
     }
 
-    public boolean updateProductByID(int productID, String productName, int quantity, double price, String image) throws Exception {
+    public void updateRoom(String maphong, String tieude, String loaiphong, String sdt, String lienhe, String dientich, String giathue, String diachi, String ghichu ) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
         try {
             con = new DBUtils().makeConnection();
             if (con != null) {
-                String sql = "UPDATE PRODUCT\n"
-                        + "SET ProductName=?, Quantity=?, Price=?,Imagee=? \n"
-                        + "WHERE ProductID=?";
+                String sql = "UPDATE Phongtro\n"
+                        + "SET TieuDe=?, Loai =? , LienHe=? , SDT=? , DienTich =? , Giathue= ? , DiaChi = ? , GhiChu= ? \n"
+                        + "WHERE MaPhong=?";
                 ps = con.prepareStatement(sql);
-                ps.setString(1, productName);
-                ps.setInt(2, quantity);
-                ps.setDouble(3, price);
-                ps.setString(4, image);
-                ps.setInt(5, productID);
-
+                ps.setString(1, tieude);
+                ps.setString(2, loaiphong);
+                ps.setString(3, lienhe);
+                ps.setString(4, sdt);
+                ps.setString(5, dientich);
+                ps.setString(6, giathue);
+                ps.setString(7, diachi);
+                ps.setString(8, ghichu);
+                ps.setString(9, maphong);
+             
                 int row = ps.executeUpdate();
                 if (row > 0) {
                     System.out.println("Update product success");
-                    return true;
                 }
                 System.out.println("Update product fail");
             }
@@ -207,7 +210,6 @@ public class RoomDAO {
                 con.close();
             }
         }
-        return false;
     }
 
     public boolean updateProductByID(int productID, String productName, int quantity, double price) throws Exception {

@@ -85,24 +85,33 @@
                 <td>GhiChu</td>
                 <td>MaDuong</td>
                 <td>MaUser</td>
+                <td>Update</td>
+                <td>Delete</td>
+
+
             </tr>
-            <c:forEach items="${requestScope.RESULT2}" var="user">
+            <c:forEach items="${requestScope.RESULT2}" var="room">
                 <tr>
-                    <td><c:out value="${user.maPhong}"/></td>
-                    <td><c:out value="${user.tieude}"/></td>
-                    <td><c:out value="${user.loai}"/></td>
+                    <td><c:out value="${room.maPhong}"/></td>
+                    <td><c:out value="${room.tieude}"/></td>
+                    <td><c:out value="${room.loai}"/></td>
                     </td>
                     <td>
-                        <c:out value="${user.lienHe}"/>
+                        <c:out value="${room.lienHe}"/>
                     </td>
-                    <td><c:out value="${user.SDT}"/></td>
-                    <td><c:out value="${user.dienTich}"/></td>
-                    <td><c:out value="${user.giaThue}"/></td>
-                    <td><c:out value="${user.diaChi}"/></td>
-                    <td><c:out value="${user.ghiChu}"/></td>
-                    <td><c:out value="${user.maDuong}"/></td>
-                    <td><c:out value="${user.maUser}"/></td>
-
+                    <td><c:out value="${room.SDT}"/></td>
+                    <td><c:out value="${room.dienTich}"/></td>
+                    <td><c:out value="${room.giaThue}"/></td>
+                    <td><c:out value="${room.diaChi}"/></td>
+                    <td><c:out value="${room.ghiChu}"/></td>
+                    <td><c:out value="${room.maDuong}"/></td>
+                    <td><c:out value="${room.maUser}"/></td>
+                    <td>
+                        <a href="UpdateRoomServlet?maphong=${room.maPhong}">Update</a>
+                    </td>
+                    <td>
+                        <a href="DeleteRoomServlet?maphong=${room.maPhong}">Delete</a>
+                    </td>
                 </tr>
 
 
