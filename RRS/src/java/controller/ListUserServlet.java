@@ -35,6 +35,7 @@ public class ListUserServlet extends HttpServlet {
             RoomDAO dao1 = new RoomDAO();
             List<AccountDTO> result1 = dao.getUser();
             List<RoomDTO> result2 =dao1.getRoom();
+            
             System.out.println("CUUUUUU");
             
             for (AccountDTO items : result1) {
@@ -51,8 +52,9 @@ public class ListUserServlet extends HttpServlet {
             for (RoomDTO items : result2){
                 System.out.println("Ten " + items.getMaPhong());
                 System.out.println("Ten " + items.getTieude());
-                System.out.println("Ten " + items.getLoai());
                 System.out.println("Ten " + items.getLienHe());
+                System.out.println("Ten " + items.getLoai());
+                
                 System.out.println("Ten " + items.getSDT());
                 System.out.println("Ten " + items.getDienTich());
                 System.out.println("Ten " + items.getGiaThue());
