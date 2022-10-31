@@ -5,11 +5,12 @@
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>List Page</title>
         <link rel="stylesheet" href="resources/css/style.css"/>
     </head>
     <body>
@@ -64,13 +65,17 @@
                         <a href="UpdateUserServlet?userName=${user.username}">Update</a>
                     </td>
                     <td>
-                        <a href="DeleteUserServlet?userName=${user.username}">Delete</a>
+                        <a href="DeleteUserServlet?userName=${user.username}">Deactivate</a>
                     </td>
                 </tr>
+                
 
             </c:forEach>
+                
         </table>
-
+<c:url value="AddAccountServlet" var="AddAccount">
+        </c:url>
+        <a href="${AddAccount}"><input type="button" value="Add new account"></a><br><br>
         <h1>Room List</h1>
         <table border="1px solid black">
             <tr>

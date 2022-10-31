@@ -225,7 +225,7 @@ public class AccountDAO implements Serializable {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO TaiKhoan \n"
-                        + "VALUES (?,?,?,?,?,?,2,1)";
+                        + "VALUES (?,?,?,?,?,?,1,1)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, username);
                 ps.setString(2, password);
