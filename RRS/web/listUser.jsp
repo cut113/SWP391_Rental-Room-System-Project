@@ -122,6 +122,9 @@
 
             </c:forEach>
         </table>
+        <c:url value="AddRoomServlet" var="AddRoom">
+        </c:url>
+        <a href="${AddRoom}"><input type="button" value="Add new room"></a><br><br>
         <c:url value="LogoutServlet" var="Logout">
         </c:url>
         <a href="${Logout}"><input type="button" value="Logout"></a>

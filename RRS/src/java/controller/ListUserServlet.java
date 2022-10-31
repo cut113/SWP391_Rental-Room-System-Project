@@ -30,7 +30,8 @@ public class ListUserServlet extends HttpServlet {
        PrintWriter out = response.getWriter();
        
         try {
-            
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
             AccountDAO dao = new AccountDAO();
             RoomDAO dao1 = new RoomDAO();
             List<AccountDTO> result1 = dao.getUser();
