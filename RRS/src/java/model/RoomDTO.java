@@ -21,12 +21,13 @@ public class RoomDTO {
     String GhiChu;
     int maDuong;
     int maUser;
+    String url;
     
 
     public RoomDTO() {
     }
 
-    public RoomDTO(int maPhong, String Tieude, String Loai, String LienHe, String SDT, int DienTich, float GiaThue, String DiaChi, String GhiChu, int maDuong, int maUser) {
+    public RoomDTO(int maPhong, String Tieude, String Loai, String LienHe, String SDT, int DienTich, float GiaThue, String DiaChi, String GhiChu, int maDuong, int maUser, String url) {
         this.maPhong = maPhong;
         this.Tieude = Tieude;
         this.Loai = Loai;
@@ -38,6 +39,7 @@ public class RoomDTO {
         this.GhiChu = GhiChu;
         this.maDuong = maDuong;
         this.maUser = maUser;
+        this.url = url;
     }
 
     public int getMaPhong() {
@@ -126,6 +128,14 @@ public class RoomDTO {
 
     public void setMaUser(int maUser) {
         this.maUser = maUser;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
     
     

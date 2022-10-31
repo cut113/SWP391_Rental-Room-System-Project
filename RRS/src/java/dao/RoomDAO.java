@@ -2,7 +2,6 @@ package dao;
 
 import utils.DBUtils;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,7 +43,8 @@ public class RoomDAO {
                     String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
                     int maUser = rs.getInt("MaUser");
-                    RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe,Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser);
+                    String url = getUrlByID(maPhong);
+                    RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
                     listStudents.add(dto);
                 }
                 return listStudents;
@@ -62,6 +62,38 @@ public class RoomDAO {
             }
         }
         return null;
+    }
+
+    public String getUrlByID(int id) throws Exception {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                String sql = "Select UrlHinhAnh from CT_HinhAnh where MaPhong = ?";
+                ps = con.prepareStatement(sql);
+                ps.setInt(1, id);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    String url = rs.getString(1);
+                    return url;
+                }
+            }
+
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return null;
+
     }
 
     public RoomDTO getRoomByID(int maPhong) throws Exception {
@@ -88,8 +120,10 @@ public class RoomDAO {
                     String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
                     int maUser = rs.getInt("MaUser");
-                    return new RoomDTO(maPhong, tieuDe, lienHe,Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser);
-                    
+                    String url = getUrlByID(maPhong);
+
+                    return new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+
                 }
             }
         } finally {
@@ -160,7 +194,7 @@ public class RoomDAO {
                 int row = ps.executeUpdate();
                 if (row > 0) {
                     System.out.println("Delete product success");
-                    return true; 
+                    return true;
                 }
                 System.out.println("Delete product fail");
             }
@@ -175,7 +209,7 @@ public class RoomDAO {
         return false;
     }
 
-    public void updateRoom(String maphong, String tieude, String loaiphong, String sdt, String lienhe, String dientich, String giathue, String diachi, String ghichu ) throws Exception {
+    public void updateRoom(String maphong, String tieude, String loaiphong, String sdt, String lienhe, String dientich, String giathue, String diachi, String ghichu) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 
@@ -195,7 +229,7 @@ public class RoomDAO {
                 ps.setString(7, diachi);
                 ps.setString(8, ghichu);
                 ps.setString(9, maphong);
-             
+
                 int row = ps.executeUpdate();
                 if (row > 0) {
                     System.out.println("Update product success");
