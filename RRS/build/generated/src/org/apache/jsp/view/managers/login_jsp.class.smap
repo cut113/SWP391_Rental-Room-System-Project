@@ -1,0 +1,16 @@
+SMAP
+login_jsp.java
+JSP
+*S JSP
+*F
++ 0 login.jsp
+view/managers/login.jsp
+*L
+5,20:57
+24:110,6
+24,4:79
+27:129,8
+28:137,3
+29:140
+29,8:85
+*E
