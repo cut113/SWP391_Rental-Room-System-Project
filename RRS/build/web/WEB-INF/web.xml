@@ -4,6 +4,10 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
     </servlet>
+      <servlet>
+        <servlet-name>DefaultServlet</servlet-name>
+        <servlet-class>controller.DefaultServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>controller.RegisterServlet</servlet-class>
@@ -20,11 +24,12 @@
         <servlet-name>ListUserServlet</servlet-name>
         <servlet-class>controller.ListUserServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AddRoomServlet</servlet-name>
-        <servlet-class>controller.AddRoomServlet</servlet-class>
-    </servlet>
+
     <servlet-mapping>
+        <servlet-name>DefaultServlet</servlet-name>
+        <url-pattern>/DefaultServlet</url-pattern>
+    </servlet-mapping>
+       <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
@@ -44,16 +49,13 @@
         <servlet-name>ListUserServlet</servlet-name>
         <url-pattern>/ListUserServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddRoomServlet</servlet-name>
-        <url-pattern>/AddRoomServlet</url-pattern>
-    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>dang-nhap.jsp</welcome-file>
+        <welcome-file>DefaultServlet</welcome-file>
     </welcome-file-list>
 </web-app>

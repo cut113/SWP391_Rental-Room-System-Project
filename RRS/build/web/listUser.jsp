@@ -73,9 +73,8 @@
             </c:forEach>
                 
         </table>
-<c:url value="AddAccountServlet" var="AddAccount">
-        </c:url>
-        <a href="${AddAccount}"><input type="button" value="Add new account"></a><br><br>
+
+        <a href="addAccount.jsp"><input type="button" value="Add new account"></a><br><br>
         <h1>Room List</h1>
         <table border="1px solid black">
             <tr>
@@ -122,9 +121,8 @@
 
             </c:forEach>
         </table>
-        <c:url value="AddRoomServlet" var="AddRoom">
-        </c:url>
-        <a href="${AddRoom}"><input type="button" value="Add new room"></a><br><br>
+
+        <a href="addRoom.jsp"><input type="button" value="Add new room"></a><br><br>
         <c:url value="LogoutServlet" var="Logout">
         </c:url>
         <a href="${Logout}"><input type="button" value="Logout"></a>

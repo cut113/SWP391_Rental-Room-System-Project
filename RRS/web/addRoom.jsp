@@ -5,27 +5,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Product Page</title>
-        <link rel="stylesheet" href="css/style.css"/>
+        <title>Add Room</title>
+        <link rel="stylesheet" href="resources/css/style.css"/>
     </head>
     <body>
-        <form action="AddRoomServlet" method="post" enctype="multipart/form-data">
-            <c:set var="errors" value="${requestScope.INSERTERR}"/>
-            <c:set var="result" value="${requestScope.RESULT}"/>
-
-            Product Name* <input type="text" name="Productname" value="" /> <br><br>
-            Quantity*  <input type="text" name="Quantity" value="" /> <br><br>
-            Price  <input type="text" name="Price" value="" /> <br><br>
-            <label for="Photo">Photo</label> <br/><br/>
-            <input class="photo" type="file" name="Image"> <br/><br/>
-            <c:if test="${not empty requestScope.INSERTERR}">
-                <font color="red">${INSERTERR}</font><br><br>
+        <form action="AddRoomServlet" method="post">
+            <c:set var="error" value="${requestScope.ERROR}"/>
+            <input type="text"  class="fadeIn third" name="TieuDe" placeholder="Tiêu Đề"><br> 
+            <input type="text" class="fadeIn second" name="Loai" placeholder="Loại">
+            <input type="text"  class="fadeIn third" name="LienHe" placeholder="Liên Hệ"><br> 
+            <input type="text" class="fadeIn second" name="SDT" placeholder="SDT">
+            <input type="text"  class="fadeIn third" name="DienTich" placeholder="Diện Tích"><br>
+            <input type="text" class="fadeIn second" name="GiaThue" placeholder="Giá Thuê">
+            <input type="text"  class="fadeIn third" name="DiaChi" placeholder="Địa Chỉ"><br> 
+            <input type="text" class="fadeIn second" name="GhiChu" placeholder="Ghi Chú">
+            <input type="text"  class="fadeIn third" name="MaDuong" placeholder="Mã Đường"><br>           
+            <c:if test="${not empty error}">
+                <font color="red" size="2" face="verdana">${error}</font><br><br>
             </c:if>
-            <input type="submit" value="Add"  />
-            <c:url var="Return" value="ShowServletAdmin">
-            </c:url>
-            <a href="${Return}"><input type="button" value="Return"/></a>
-
-        </form> <br>
+            <input type="reset" value="Reset" />
+            <input type="submit" class="fadeIn fourth" value="Add New Room"> 
+        </form>
     </body>
 </html>

@@ -40,8 +40,16 @@
                                                 <div class="news-item item-vip5">
                                                     <div class="news-thumb"> 
                                                         <a href='detail-id-${item.tieude}.html'>
-                                                            <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
+                                                            <c:choose>
+                                                                <c:when test="${ empty item.url}">
+                                                                    <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
+                                                                </c:when>
+                                                                <c:when test="${ not empty item.url}">
+                                                                   <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
+                                                                </c:when>
+                                                            </c:choose>
                                                            
+
                                                         </a>
                                                     </div>
                                                     <div class="news-info">

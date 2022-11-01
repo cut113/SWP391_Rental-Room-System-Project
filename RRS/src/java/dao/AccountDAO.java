@@ -12,6 +12,42 @@ import javax.naming.NamingException;
 import model.AccountDTO;
 
 public class AccountDAO implements Serializable {
+    public boolean addAccount(String username, String password, String fullname, int SDT, String email, String diaChi, String phanQuyen, boolean trangThai) throws Exception {
+        Connection con = null;
+        PreparedStatement ps = null;
+
+        try {
+            con = new DBUtils().makeConnection();
+            if (con != null) {
+                String sql = "INSERT INTO TaiKhoan \n"
+                        + "VALUES(?,?,?,?,?,?,?,?)";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ps.setString(3, fullname);
+                ps.setInt(4, SDT);
+                ps.setString(5, email);
+                ps.setString(6, diaChi);
+                ps.setString(7, phanQuyen);
+                ps.setBoolean(8, trangThai);
+
+                int row = ps.executeUpdate();
+                if (row > 0) {
+                    System.out.println("Add room successfully");
+                    return true;
+                }
+                System.out.println("Add room successfully");
+            }
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return false;
+    }
 
     public List<AccountDTO> getUser() throws SQLException, NamingException, Exception {
         List<AccountDTO> listClass;
@@ -180,42 +216,7 @@ public class AccountDAO implements Serializable {
         }
     }
 
-    public boolean addAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception {
-        Connection con = null;
-        PreparedStatement ps = null;
-
-        try {
-            con = new DBUtils().makeConnection();
-            if (con != null) {
-                String sql = "INSERT INTO TaiKhoan \n"
-                        + "VALUES (?,?,?,?,?,?,?,?)";
-                ps = con.prepareStatement(sql);
-                ps.setString(1, username);
-                ps.setString(2, password);
-                ps.setString(3, fullname);
-                ps.setString(4, SDT);
-                ps.setString(5, Email);
-                ps.setString(6, DiaChi);
-                ps.setInt(7, PhanQuyen);
-                ps.setBoolean(8, TrangThai);
-
-                int row = ps.executeUpdate();
-                if (row > 0) {
-                    System.out.println("Add account successfully");
-                    return true;
-                }
-                System.out.println("Add user fail");
-            }
-        } finally {
-            if (ps != null) {
-                ps.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-        return false;
-    }
+    
 
     public boolean addAccountByUser(String username, String password, String fullname, String SDT, String Email, String DiaChi) throws Exception {
         Connection con = null;

@@ -41,7 +41,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-4">
                             <div class="logo">
                                 <div class="pull-left">
-                                    <a href="home.htm" rel="home">
+                                    <a href="DefaultServlet" rel="home">
                                         <img src="<c:url value ="/resources/images/logo.png?v=20200501"/>" alt="">
                                     </a>
                                 </div>

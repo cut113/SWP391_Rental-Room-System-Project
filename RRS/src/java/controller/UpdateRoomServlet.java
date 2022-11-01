@@ -62,6 +62,8 @@ public class UpdateRoomServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
 
         try {
             String maphong = request.getParameter("maphong");
@@ -87,6 +89,8 @@ public class UpdateRoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
             String maphong = request.getParameter("maphong");
             String tieude = request.getParameter("tieude");
             String loaiphong = request.getParameter("loai");
