@@ -22,8 +22,9 @@
                     <input type="text"  class="fadeIn third" name="diaChi" placeholder="Địa Chỉ"><br>
                     <input type="text" class="fadeIn second" name="phanQuyen" placeholder="Phân Quyền">
                     <input type="text"  class="fadeIn third" name="trangThai" placeholder="Trạng Thái"><br> 
-                    <input type="reset" value="Reset" />
                     <input type="submit" class="fadeIn fourth" value="Add"> 
+                    <input type="reset" value="Reset" />
+                   
                 </div>
         </div>
     </form>    

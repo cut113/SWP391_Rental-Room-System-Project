@@ -48,14 +48,19 @@ public class LoginServlet extends HttpServlet {
                     request.setAttribute("ERROR", error);
                     RequestDispatcher rd = request.getRequestDispatcher("dang-nhap.jsp");
                     rd.forward(request, response);
-                } else if (account.getPhanQuyen() != 0) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("ACCOUNT", account);
-                    response.sendRedirect("ShowServletUser");
-                } else {
+                } else if (account.getPhanQuyen() == 0) {
                     HttpSession session = request.getSession();
                     session.setAttribute("ACCOUNT", account);
                     response.sendRedirect("ListUserServlet");
+                } else if (account.getPhanQuyen() == 1) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("ACCOUNT", account);
+                    response.sendRedirect("DefaultServlet");
+                } 
+                else {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("ACCOUNT", account);
+                    response.sendRedirect("DefaultServlet");
                     System.out.println("Da toi dc day r");
                 }
             }
