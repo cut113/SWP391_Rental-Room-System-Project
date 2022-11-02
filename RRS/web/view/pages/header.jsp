@@ -61,7 +61,7 @@
                                 <a class="btn btn-login" href="dang-nhap.jsp" rel="nofollow"><i class="fa fa-sign-in"></i> Đăng nhập</a>
                             </c:if>  
                             <c:if test="${sessionScope.ACCOUNT !=null}">
-                                <a class="btn btn-login" href="dang-ky.jsp" rel="nofollow"><i class="fa fa-user" aria-hidden="true"></i>Chào ${sessionScope.ACCOUNT.username}</a>
+                                <a class="btn btn-login" href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}" rel="nofollow"><i class="fa fa-user" aria-hidden="true"></i>Chào ${sessionScope.ACCOUNT.username}</a>
                                 <a href="LogoutServlet"><input type="button" value="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                             </c:if>
                         </div>

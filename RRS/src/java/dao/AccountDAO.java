@@ -179,7 +179,40 @@ public class AccountDAO implements Serializable {
         }
         return null;
     }
+    public void updateAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi) throws Exception {
+        Connection con = null;
+        PreparedStatement ps = null;
+        System.out.println("da vo toi updateaccount dao");
+        try {
+            con = new DBUtils().makeConnection();
+            if (con != null) {
+                String sql = "UPDATE TaiKhoan \n"
+                        + "SET Password=?, Fullname=?, SDT=?, EmailLienHe=?, DiaChi=?\n"
+                        + "WHERE Username=?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, password);
+                ps.setString(2, fullname);
+                ps.setString(3, SDT);
+                ps.setString(4, Email);
+                ps.setString(5, DiaChi);
+                ps.setString(6, username);
+                System.out.println("password: " + password);
 
+                int row = ps.executeUpdate();
+                if (row > 0) {
+                    System.out.println("Update user success");
+                }
+                System.out.println("Update user fail");
+            }
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+    }
     public void updateAccount(String username, String password, String fullname, String SDT, String Email, String DiaChi, int PhanQuyen, boolean TrangThai) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
