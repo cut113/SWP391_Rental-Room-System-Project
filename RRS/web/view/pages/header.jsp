@@ -56,8 +56,14 @@
                     </div>
                     <div class="pull-right">   
                         <div class="user_welcome">
-                            <a class="btn btn-login" href="dang-ky.jsp" rel="nofollow"><i class="fa fa-user-plus"></i> Đăng ký</a>
-                            <a class="btn btn-login" href="dang-nhap.jsp" rel="nofollow"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+                            <c:if test="${sessionScope.ACCOUNT == null}">
+                                <a class="btn btn-login" href="dang-ky.jsp" rel="nofollow"><i class="fa fa-user-plus"></i> Đăng ký</a>
+                                <a class="btn btn-login" href="dang-nhap.jsp" rel="nofollow"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+                            </c:if>  
+                            <c:if test="${sessionScope.ACCOUNT !=null}">
+                                <a class="btn btn-login" href="dang-ky.jsp" rel="nofollow"><i class="fa fa-user" aria-hidden="true"></i>Chào ${sessionScope.ACCOUNT.username}</a>
+                                <a href="LogoutServlet"><input type="button" value="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -91,7 +97,7 @@
                     <nav class="navbar">
                         <ul class="navbar-nav">
                             <li class="menu-item-has-children current-menu-item">
-                                <a href="home.htm" rel="nofollow">Trang chủ</a>
+                                <a href="DefaultServlet" rel="nofollow">Trang chủ</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
@@ -108,10 +114,12 @@
                             <li class="menu-item-has-children">
                                 <a href="#" rel="nofollow">Hướng dẫn</a>
                             </li>
-
-                            <li>
+                            <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
+                               <li>
                                 <a href="dang-tin.htm" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
-                            </li>
+                            </li> 
+                            </c:if>
+                            
                         </ul>
                     </nav>
                 </div>

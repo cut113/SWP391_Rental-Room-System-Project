@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
         System.out.println("LogoutServlet GET");
         HttpSession session = request.getSession();
         session.removeAttribute("ACCOUNT");
-        response.sendRedirect("LoginServlet");
+        response.sendRedirect("DefaultServlet");
     }
 
     @Override
