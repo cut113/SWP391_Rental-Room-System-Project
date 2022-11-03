@@ -62,7 +62,10 @@
                             </c:if>  
                             <c:if test="${sessionScope.ACCOUNT !=null}">
                                 <a class="btn btn-login" href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}" rel="nofollow"><i class="fa fa-user" aria-hidden="true"></i>Chào ${sessionScope.ACCOUNT.username}</a>
-                                <a class="btn btn-login" href="ListUserServlet" rel="nofollow"><i class="fa fa-user-circle" aria-hidden="true"></i>Quản lý </a>
+                                <c:if test="${sessionScope.ACCOUNT.phanQuyen == 0}">
+                                   <a class="btn btn-login" href="ListUserServlet" rel="nofollow"><i class="fa fa-user-circle" aria-hidden="true"></i>Quản lý </a> 
+                                </c:if>
+                                
                                 <a href="LogoutServlet"><input type="button" value="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                             </c:if>
                         </div>

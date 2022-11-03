@@ -109,8 +109,8 @@
                                 </div>
                                 <div class="user_profile_account_body">
                                     <ul>
-                                        <li><a href="doi-mat-khau.htm"><i class="fa fa-lock"></i> Đổi mật khẩu</a></li>
-                                        <li><a href="thoat.htm" title="Thoát"><i class="fa fa-sign-out"></i> Thoát</a></li>
+                                        
+                                        <li><a href="LogoutServlet" title="Thoát"><i class="fa fa-sign-out"></i> Thoát</a></li>
                                     </ul>
                                 </div>
                             </div>
