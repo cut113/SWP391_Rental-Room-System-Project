@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="resources/css/style.css"/>
     </head>
     <body>
+        <a href="DefaultServlet" rel="home">
+                                        <img src="<c:url value ="/resources/images/logo.png?v=20200501"/>" alt="">
+                                    </a>
         <h1>User List!</h1>
 
 

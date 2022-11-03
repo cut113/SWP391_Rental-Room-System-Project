@@ -17,7 +17,7 @@
         </c:choose>
 
         <div class="container">
-            <!-- <jsp:include page="searchbar.jsp"></jsp:include> -->
+            <jsp:include page="searchbar.jsp"></jsp:include>
                 <div class="access_page">
                     <div class="page_header">
                         <h1 class="page_title font20">Cho thuê phòng trọ, tìm nhà trọ nhanh chóng</h1>

@@ -70,7 +70,9 @@
 		                            <div class="user-action">
 		                                <a href="tai-khoan.htm">${sessionScope.userInfo.maUser}</a>
 		                            </div>
+                                                <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
 		                        <a href="dang-tin.htm" class="user-post"><strong><i class="fa fa-pencil-square-o"></i> Đăng tin</strong></a>
+                                        </c:if>
 		                    </div>
 		                    <div style="float:right;width:10%">
 		
@@ -112,7 +114,7 @@
                 </div>
                 <div class="pull-right">       
 					<div class="user_welcome">
-					    <div class="welcome_user_text">Xin chào, <strong><a rel="nofollow" href="tai-khoan.htm" class="text-blue">${sessionScope.userInfo.userName}</a></strong></div>
+					    <div class="welcome_user_text">Xin chào, <strong><a rel="nofollow" href="tai-khoan.htm" class="text-blue">${sessionScope.ACCOUNT.username}</a></strong></div>
 				        <div class="dropdown user_welcome_dropdown">
 				            <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				                Quản lý tài khoản
