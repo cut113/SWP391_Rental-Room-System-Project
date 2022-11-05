@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
         AccountDAO dao = new AccountDAO();
         try {
             AccountDTO account = dao.searchUser(username, password);
-            System.out.println("ID"+ account.getUserID());
+            //System.out.println("ID"+ account.getUserID());
             if (account == null) {
                 String error = "User or password is empty or error";
                 request.setAttribute("ERROR", error);
