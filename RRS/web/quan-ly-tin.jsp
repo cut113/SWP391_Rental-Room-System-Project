@@ -31,7 +31,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="item" varStatus="loop" items="${sessionScope.userInfo.phongTro}">
+                                    <c:forEach var="item" varStatus="loop" items="${listR}">
                                         <tr>
 
                                             <td>
@@ -40,12 +40,12 @@
                                                         <div class="news-thumb">
                                                             <a href="detail-id-${item.maPhong}.htm" target="_blank">
                                                                 <c:choose>
-                                                                    <c:when test="${ empty item.ctHinhAnh}">
-                                                                        <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieuDe}" class="lazyload">
+                                                                    <c:when test="${ empty item.url}">
+                                                                        <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
                                                                     </c:when>
-                                                                    <c:when test="${ not empty item.ctHinhAnh}">
-                                                                        <c:forEach var="itemimg" begin="0" end="0" varStatus="loop" items="${item.ctHinhAnh}">                             
-                                                                            <img src= "<c:url value = "/files/${itemimg.urlHinhAnh}"/>" alt="${item.tieuDe}" class="lazyload">
+                                                                    <c:when test="${ not empty item.url}">
+                                                                        <c:forEach var="itemimg" begin="0" end="0" varStatus="loop" items="${item.url}">                             
+                                                                            <img src= "<c:url value = "/files/${item.url}"/>" alt="${item.tieude}" class="lazyload">
                                                                         </c:forEach>  
                                                                     </c:when>
                                                                 </c:choose>
@@ -53,7 +53,7 @@
                                                         </div>
                                                         <div class="news-info">
                                                             <h4 class="news-title">
-                                                                <a href="detail-id-${item.maPhong}.htm" title="detail" target="_blank">${item.tieuDe}</a>
+                                                                <a href="detail-id-${item.maPhong}.htm" title="detail" target="_blank">${item.tieude}</a>
                                                             </h4>
                                                             <div class="help-block">
                                                                 <div class="pdt-5">

@@ -15,7 +15,7 @@
                     <div class="page_content intro_page clearfix">
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
                         <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
-                            <li><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
+                            <li><a href="ListRoomServlet"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
                             </c:if>
 
                         <li class="active"><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>

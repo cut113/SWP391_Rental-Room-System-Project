@@ -63,7 +63,50 @@ public class RoomDAO {
         }
         return null;
     }
+    public RoomDTO getRoomByUser(int userID) throws Exception {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            con = new DBUtils().makeConnection();
+            if (con != null) {
+                String sql = "SELECT * FROM PhongTro \n"
+                        + "WHERE MaUser=?";
+                ps = con.prepareStatement(sql);
+                ps.setInt(1, userID);
+                rs = ps.executeQuery();
 
+                while (rs.next()) {
+                    int maPhong = rs.getInt("MaPhong");
+                    String tieuDe = rs.getString("TieuDe");
+                    String Loai = rs.getString("Loai");
+                    String lienHe = rs.getString("LienHe");
+                    String SDT = rs.getString("SDT");
+                    int dienTich = rs.getInt("DienTich");
+                    float giaThue = rs.getFloat("GiaThue");
+                    String diaChi = rs.getString("DiaChi");
+                    String ghiChu = rs.getString("GhiChu");
+                    int maDuong = rs.getInt("MaDuong");
+                    int maUser = rs.getInt("MaUser");
+                    String url = getUrlByID(maPhong);
+
+                    return new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return null;
+    }
     public String getUrlByID(int id) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
