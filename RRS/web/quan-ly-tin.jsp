@@ -14,8 +14,10 @@
                 <div class="access_page">
                     <div class="page_content intro_page clearfix">
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
-                            <li class="active"><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
-                            <li><a href="tai-khoan.htm"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                            <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
+                            <li><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
+                            </c:if>
+                            <li><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
                         </ul>
                         <div class="tab-content">
                             <h4>QUẢN LÝ TIN</h4>

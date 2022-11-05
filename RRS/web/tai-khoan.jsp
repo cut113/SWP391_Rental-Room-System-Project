@@ -16,23 +16,23 @@
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
                         <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                             <li><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
-                        </c:if>
-                            
-                            <li class="active"><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <h4>TH&#212;NG TIN T&#192;I KHOẢN</h4>
-                            <hr />
-                            <div class="row user_profile_wrapper">
-                                <div class="user_profile_left col-xs-12 col-md-8">
-                                    <form action="UpdateAccountServlet" method="POST" class="form-horizontal" modelAttribute="userInfo">
+                            </c:if>
+
+                        <li class="active"><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <h4>TH&#212;NG TIN T&#192;I KHOẢN</h4>
+                        <hr />
+                        <div class="row user_profile_wrapper">
+                            <div class="user_profile_left col-xs-12 col-md-8">
+                                <form action="UpdateAccountServlet" method="POST" class="form-horizontal" modelAttribute="userInfo">
+                                    <div class="form-group">
                                         <div class="form-group">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3">Mã tài khoản</label>
-                                                <div class="col-md-9">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">#</span>
-                                                        <input class="form-control text-box single-line" value="${a.userID}" name="userID" disabled="true" placeholder="${sessionScope.ACCOUNT.userID}"/>
+                                            <label class="control-label col-md-3">Mã tài khoản</label>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">#</span>
+                                                    <input class="form-control text-box single-line" value="${a.userID}" name="userID" disabled="true" placeholder="${sessionScope.ACCOUNT.userID}"/>
                                                 </div>
                                             </div>
                                         </div>                            
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="user_profile_account_body">
                                     <ul>
-                                        
+
                                         <li><a href="LogoutServlet" title="Thoát"><i class="fa fa-sign-out"></i> Thoát</a></li>
                                     </ul>
                                 </div>

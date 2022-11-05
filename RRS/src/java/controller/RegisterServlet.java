@@ -13,7 +13,7 @@ import model.AccountDTO;
 public class RegisterServlet extends HttpServlet {
 
     private final String forwardPage = "addAccount.jsp";
-    private final String successPage = "index.jsp";
+    private final String successPage = "dang-nhap.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
