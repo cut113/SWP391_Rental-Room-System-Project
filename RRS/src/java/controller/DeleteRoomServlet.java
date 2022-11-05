@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.AccountDTO;
 
 /**
  *
@@ -42,7 +43,14 @@ public class DeleteRoomServlet extends HttpServlet {
           
                 System.out.println("username trong delete" + maphong);
                 dao.deleteRoom(maphong);
-                response.sendRedirect("ListUserServlet");
+                AccountDTO currentAccount = (AccountDTO) request.getSession().getAttribute("ACCOUNT");
+                int role = currentAccount.getPhanQuyen();
+                
+                if (role == 0){
+                    response.sendRedirect("ListUserServlet");
+                } else
+                    response.sendRedirect("ListRoomServlet");
+                
             }
         }
     

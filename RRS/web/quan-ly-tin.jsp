@@ -15,9 +15,9 @@
                     <div class="page_content intro_page clearfix">
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
                             <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
-                            <li><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
+                            <li class="active"><a href="quan-ly-tin.jsp"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
                             </c:if>
-                            <li><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                            <li><a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
                         </ul>
                         <div class="tab-content">
                             <h4>QUẢN LÝ TIN</h4>
@@ -60,14 +60,16 @@
                                                                     <span class="mgr-15">Mã tin: <b>${item.maPhong}</b></span>
                                                                 </div>
                                                                 <div class="pdt-5 clearfix">
-                                                                    <span class="mgr-15">Loại tin: 
+                                                                    <span class="mgr-15">Diện tích: 
                                                                         <span class="text text-primary">
-                                                                            <c:choose>
-                                                                                <c:when test="${item.loai == '1'}">Cho thuê phòng trọ</c:when>
-                                                                                <c:when test="${item.loai == '2'}">Cho thuê căn hộ</c:when>
-                                                                                <c:when test="${item.loai == '3'}">Cho thuê nhà nguyên căn</c:when>
-                                                                                <c:when test="${item.loai == '4'}">Tìm người ở ghép</c:when>
-                                                                            </c:choose>
+                                                                            ${item.dienTich} m2
+                                                                        </span>
+                                                                    </span>
+                                                                </div>
+                                                                        <div class="pdt-5 clearfix">
+                                                                    <span class="mgr-15">Giá thuê: 
+                                                                        <span class="text text-primary">
+                                                                            ${item.giaThue} triệu đồng
                                                                         </span>
                                                                     </span>
                                                                 </div>
@@ -77,8 +79,8 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <p class="text-center"><a href="sua-tin-id-${item.maPhong}.htm" title="Sửa tin" class="label label-info"><i class="fa fa-edit"></i> Sửa tin</a></p>
-                                                <p class="text-center"><a href="xoa-tin-id-${item.maPhong}.htm"  title="Xóa tin" class="label label-info"><i class="fa fa-remove"></i> Xóa tin</a></p>
+                                                <p class="text-center"><a href="UpdateRoomServlet?maphong=${item.maPhong}" title="Sửa tin" class="label label-info"><i class="fa fa-edit"></i> Sửa tin</a></p>
+                                                <p class="text-center"><a href="DeleteRoomServlet?maphong=${item.maPhong}"  title="Xóa tin" class="label label-info"><i class="fa fa-remove"></i> Xóa tin</a></p>
                                             </td>
 
                                         </tr>

@@ -101,11 +101,11 @@
                 <tr>
                     <td><c:out value="${room.maPhong}"/></td>
                     <td><c:out value="${room.tieude}"/></td>
-                    <td><c:out value="${room.loai}"/></td>
-                    </td>
                     <td>
                         <c:out value="${room.lienHe}"/>
                     </td>
+                    <td><c:out value="${room.loai}"/></td>
+                    
                     <td><c:out value="${room.SDT}"/></td>
                     <td><c:out value="${room.dienTich}"/></td>
                     <td><c:out value="${room.giaThue}"/></td>

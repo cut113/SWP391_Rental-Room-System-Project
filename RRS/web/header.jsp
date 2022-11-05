@@ -127,7 +127,7 @@
                                     <li role="separator" class="divider"></li>
                                         <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                                         <li><a rel="nofollow" href="dang-tin.htm" title="Đăng tin"><i class="fa fa-plus-circle" aria-hidden="true"></i> Đăng tin</a></li>
-                                        <li><a rel="nofollow" href="quan-ly-tin.htm" title="Quản lý tin"><i class="fa fa-list-alt" aria-hidden="true"></i> Quản lý tin đăng</a></li>
+                                        <li><a rel="nofollow" href="ListRoomServlet" title="Quản lý tin"><i class="fa fa-list-alt" aria-hidden="true"></i> Quản lý tin đăng</a></li>
                                         </c:if>
 
 

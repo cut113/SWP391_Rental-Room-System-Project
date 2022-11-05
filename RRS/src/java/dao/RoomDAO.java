@@ -63,7 +63,9 @@ public class RoomDAO {
         }
         return null;
     }
-    public RoomDTO getRoomByUser(int userID) throws Exception {
+    public List<RoomDTO> getRoomByUser(int maUser) throws Exception {
+        List<RoomDTO> listStudents;
+        listStudents = new ArrayList<>();
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -73,7 +75,7 @@ public class RoomDAO {
                 String sql = "SELECT * FROM PhongTro \n"
                         + "WHERE MaUser=?";
                 ps = con.prepareStatement(sql);
-                ps.setInt(1, userID);
+                ps.setInt(1, maUser);
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
@@ -87,12 +89,12 @@ public class RoomDAO {
                     String diaChi = rs.getString("DiaChi");
                     String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
-                    int maUser = rs.getInt("MaUser");
                     String url = getUrlByID(maPhong);
 
-                    return new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
-
+                    RoomDTO dto= new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+                    listStudents.add(dto);
                 }
+                return listStudents;
             }
         } finally {
             if (rs != null) {
@@ -165,7 +167,7 @@ public class RoomDAO {
                     int maUser = rs.getInt("MaUser");
                     String url = getUrlByID(maPhong);
 
-                    return new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+                    return new RoomDTO(maPhong, tieuDe, Loai, lienHe, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
 
                 }
             }
@@ -252,7 +254,7 @@ public class RoomDAO {
         return false;
     }
 
-    public void updateRoom(String maphong, String tieude, String loaiphong, String sdt, String lienhe, String dientich, String giathue, String diachi, String ghichu) throws Exception {
+    public void updateRoom(String maphong, String tieude, String loaiphong, String lienhe, String sdt, String dientich, String giathue, String diachi, String ghichu) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
 

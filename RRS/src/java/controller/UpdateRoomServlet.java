@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.AccountDTO;
 import model.RoomDTO;
 
 /**
@@ -94,24 +95,24 @@ public class UpdateRoomServlet extends HttpServlet {
             String maphong = request.getParameter("maphong");
             String tieude = request.getParameter("tieude");
             String loaiphong = request.getParameter("loai");
-            String sdt = request.getParameter("sdt");
             String lienhe = request.getParameter("lienhe");
+            String sdt = request.getParameter("sdt");
+
             String dientich = request.getParameter("dientich");
             String giathue = request.getParameter("giathue");
             String diachi = request.getParameter("diachi");
             String ghichu = request.getParameter("ghichu");
-            System.out.println(maphong);
-            System.out.println(tieude);
-            System.out.println(loaiphong);
-            System.out.println(sdt);
-            System.out.println(lienhe);
-            System.out.println(dientich);
-            System.out.println(giathue);
-            System.out.println(diachi);
-            System.out.println(ghichu);
+
             RoomDAO dao = new RoomDAO();
-            dao.updateRoom(maphong, tieude, loaiphong, sdt, lienhe, dientich, giathue, diachi, ghichu);
-            response.sendRedirect("ListUserServlet");
+            dao.updateRoom(maphong, tieude, loaiphong, lienhe, sdt, dientich, giathue, diachi, ghichu);
+            AccountDTO currentAccount = (AccountDTO) request.getSession().getAttribute("ACCOUNT");
+            int role = currentAccount.getPhanQuyen();
+            if (role == 0) {
+                response.sendRedirect("ListUserServlet");
+            } else {
+                response.sendRedirect("ListRoomServlet");
+            }
+
         } catch (Exception ex) {
             Logger.getLogger(UpdateRoomServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

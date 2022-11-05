@@ -44,7 +44,7 @@ public class ListRoomServlet extends HttpServlet {
             RoomDAO dao = new RoomDAO();
             AccountDTO currentAccount = (AccountDTO) request.getSession().getAttribute("ACCOUNT");
             int maUser = currentAccount.getUserID();
-            List <RoomDTO> ro = dao.getRoom();
+            List <RoomDTO> ro = dao.getRoomByUser(maUser);
             request.setAttribute("listR", ro);
             request.getRequestDispatcher("quan-ly-tin.jsp").forward(request, response);
         }
