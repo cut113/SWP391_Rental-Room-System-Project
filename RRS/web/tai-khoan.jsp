@@ -14,8 +14,11 @@
                 <div class="access_page">
                     <div class="page_content intro_page clearfix">
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
+                        <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                             <li><a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
-                            <li class="active"><a href="tai-khoan.htm"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                        </c:if>
+                            
+                            <li class="active"><a href="tai-khoan.jsp"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
                         </ul>
                         <div class="tab-content">
                             <h4>TH&#212;NG TIN T&#192;I KHOẢN</h4>
@@ -29,7 +32,7 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon">#</span>
-                                                        <input class="form-control text-box single-line" value="${u.username}" name="userID" disabled="true" placeholder="${sessionScope.ACCOUNT.userID}"/>
+                                                        <input class="form-control text-box single-line" value="${a.userID}" name="userID" disabled="true" placeholder="${sessionScope.ACCOUNT.userID}"/>
                                                 </div>
                                             </div>
                                         </div>                            
@@ -49,7 +52,7 @@
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                    <input class="form-control text-box single-line" name="password" placeholder="${sessionScope.ACCOUNT.password}"/>
+                                                    <input class="form-control text-box single-line" name="password" value="${a.password}" placeholder="${sessionScope.ACCOUNT.password}"/>
                                                 </div>
                                             </div>
                                         </div>          
@@ -59,7 +62,7 @@
                                                 <errors style="color: red" path= "sdt"/>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                    <input class="form-control text-box single-line" name="sdt" placeholder="${sessionScope.ACCOUNT.SDT}"/>  
+                                                    <input class="form-control text-box single-line" name="sdt" value="${a.SDT}" placeholder="${sessionScope.ACCOUNT.SDT}"/>  
                                                     <span class="input-group-addon"><span class="text text-success" title="Đã xác minh"><i class="fa fa-check" aria-hidden="true"></i></span></span>
                                                 </div>
                                             </div>
@@ -71,7 +74,7 @@
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                    <input class="form-control text-box single-line" name="fullname" placeholder="${sessionScope.ACCOUNT.fullname}"/>
+                                                    <input class="form-control text-box single-line" name="fullname" value="${a.fullname}" placeholder="${sessionScope.ACCOUNT.fullname}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,7 +84,7 @@
                                                 <errors style="color: red" path= "emailLienHe"/>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                    <input class="form-control text-box single-line" name="email" placeholder="${sessionScope.ACCOUNT.email}"/>
+                                                    <input class="form-control text-box single-line" name="email" value="${a.email}" placeholder="${sessionScope.ACCOUNT.email}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +93,7 @@
                                             <div class="col-md-9">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                                                    <input class="form-control text-box single-line" name="diachi" placeholder="${sessionScope.ACCOUNT.diaChi}"/>
+                                                    <input class="form-control text-box single-line" name="diachi" value="${a.diaChi}" placeholder="${sessionScope.ACCOUNT.diaChi}"/>
                                                 </div>
                                             </div>
                                         </div>

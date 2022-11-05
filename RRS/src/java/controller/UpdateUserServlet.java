@@ -55,10 +55,10 @@ public class UpdateUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("userName");
-        System.out.println("id: " + username);
+        
         AccountDAO dao = new AccountDAO();
         AccountDTO u = dao.getUser(username);
-        System.out.println(u.getEmail());
+        
         request.setAttribute("u", u);
         request.getRequestDispatcher("updateAccount.jsp").forward(request, response);
     }

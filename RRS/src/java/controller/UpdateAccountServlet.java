@@ -94,7 +94,7 @@ public class UpdateAccountServlet extends HttpServlet {
         } catch (Exception ex) {
             Logger.getLogger(UpdateUserServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        response.sendRedirect("ListUserServlet");
+        response.sendRedirect("DefaultServlet");
 
     }
 
