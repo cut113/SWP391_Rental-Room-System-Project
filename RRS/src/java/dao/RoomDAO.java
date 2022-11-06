@@ -140,7 +140,46 @@ public class RoomDAO {
         return null;
 
     }
+    public boolean addRoom(String tieuDe, String Loai, String lienHe, String SDT, int dienTich, float giaThue, String diaChi, String ghiChu, int maDuong, int maUser, String image) throws Exception {
+        Connection con = null;
+        PreparedStatement ps = null;
 
+        try {
+            con = new DBUtils().makeConnection();
+            if (con != null) {
+                String sql = "INSERT INTO PhongTro \n"
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?) \n "
+                        + "insert into CT_HinhAnh values(@@IDENTITY,?)";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, tieuDe);
+                ps.setString(2, Loai);
+                ps.setString(3, lienHe);
+                ps.setString(4, SDT);
+                ps.setInt(5, dienTich);
+                ps.setFloat(6, giaThue);
+                ps.setString(7, diaChi);
+                ps.setString(8, ghiChu);
+                ps.setInt(9, maDuong);
+                ps.setInt(10, maUser);
+                ps.setString(11, image);
+
+                int row = ps.executeUpdate();
+                if (row > 0) {
+                    System.out.println("Add room successfully");
+                    return true;
+                }
+                System.out.println("Add room successfully");
+            }
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return false;
+    }
     public RoomDTO getRoomByID(int maPhong) throws Exception {
         Connection con = null;
         PreparedStatement ps = null;

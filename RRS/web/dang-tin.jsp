@@ -20,6 +20,8 @@
         <link href="<c:url value="/resources/css/select2.css"/>" rel='stylesheet' type='text/css'/>
         <link href="<c:url value="/resources/css/lightslider.css" />" rel='stylesheet' type='text/css'/>
         <link href="<c:url value="/resources/css/lightgallery.css"/>" rel='stylesheet' type='text/css'/>
+        <link href="<c:url value="/resources/css/lightgallery.css"/>" rel='stylesheet' type='text/css'/>
+
         <!-- scale lại preview img -->
         <style type="text/css">.thumb-image{float:left;width:100px;position:relative;padding:5px;}.selectedItem{border:2px solid blue;}</style>
     </head>
@@ -50,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-8 block-left dang_tin">
-                                <form action="dang-tin.htm" class="form frm-dangtin" enctype="multipart/form-data" modelAttribute="detail">               
+                                <form action="AddNewRoomServlet" method="post" enctype='multipart/form-data'>   
                                     <div class="form_step step1">
                                         <div class="group_fields">
                                             <h3 class="form_title">Thông tin cơ bản</h3>
@@ -59,8 +61,7 @@
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <label class="control-label">Tiêu đề tin <span class="red_require">*</span></label>
-                                                            <form:errors style="color: red" path= "tieuDe"/>
-                                                            <input class="form-control text-box single-line" path="tieuDe"/>
+                                                            <input class="form-control text-box single-line" name="tieuDe"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -68,87 +69,71 @@
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <label class="control-label">Loại <span class="red_require">*</span></label>
-                                                            <form:errors style="color: red" path= "tieuDe"/>
-                                                            <input class="form-control text-box single-line" path="tieuDe"/>
+                                                            <input class="form-control text-box single-line" name="loai"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
-                                                        
-                                                    <div class="col-sm-12 col-xs-12">
-                                                        <label class="control-label">Diện tích <span class="red_require">*</span></label>
-                                                        <form:errors style="color: red" path= "dienTich"/>
-                                                        <div class="input-group">
-                                                            <input class="form-control text-box single-line" path="dienTich"/>
-                                                            <span class="input-group-addon" id="basic-addon2">m²</span>
+
+                                                        <div class="col-sm-12 col-xs-12">
+                                                            <label class="control-label">Diện tích <span class="red_require">*</span></label>
+                                                            <div class="input-group">
+                                                                <input class="form-control text-box single-line" name="dienTich"/>
+                                                                <span class="input-group-addon" id="basic-addon2">m²</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="clearfix">
+                                                                <div class="pull-left"><label class="control-label">Giá cho thuê <span class="red_require">*</span></label></div>
+                                                            </div>
+                                                            <input class="form-control text-box single-line" placeholder="VD: 2 triệu 500 nghìn thì nhập 2.5" name="giaThue"/>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label class="control-label">Đơn vị giá <span class="red_require">*</span></label>
+                                                            <input class="form-control" value="Triệu/tháng" placeholder="Triệu/tháng" disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">Địa chỉ <span class="red_require">*</span></label>
+                                                    <input class="form-control text-box single-line" name="diaChi"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="group_fields">
+                                            <h3 class="form_title">Thông tin mô tả</h3>
+                                            <div class="group_fields_body">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <label class="control-label">Nội dung <span class="red_require">*</span></label>
+                                                            <textarea class="form-control edtior-noidung" cols="20" rows="8" name="ghiChu"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="clearfix">
-                                                            <div class="pull-left"><label class="control-label">Giá cho thuê <span class="red_require">*</span></label></div>
-                                                            <form:errors style="color: red" path= "giaThue"/>
-                                                        </div>
-                                                        <input class="form-control text-box single-line" placeholder="VD: 2 triệu 500 nghìn thì nhập 2.5" path="giaThue"/>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="control-label">Đơn vị giá <span class="red_require">*</span></label>
-                                                        <input class="form-control" value="Triệu/tháng" placeholder="Triệu/tháng" disabled>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <label class="control-label">Đường/Phố</label>
-                                                        <form:errors style="color: red" path= "maDuong.maDuong"/>
-                                                        <select path="maDuong.maDuong" class="form-control">
-                                                            <option value="" label="--Chọn đường phố--"/>
-                                                            <options items="${sessionScope.listD}" itemValue="MaDuong" itemLabel="TenDuong"/>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label">Địa chỉ <span class="red_require">*</span></label>
-                                                <form:errors style="color: red" path= "diaChi"/>
-                                                <input class="form-control text-box single-line" path="diaChi"/>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="group_fields">
-                                        <h3 class="form_title">Thông tin mô tả</h3>
-                                        <div class="group_fields_body">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <label class="control-label">Nội dung <span class="red_require">*</span></label>
-                                                        <form:errors style="color: red" path= "ghiChu"/>
-                                                        <textarea class="form-control edtior-noidung" cols="20" rows="8" path="ghiChu"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="group_fields">
-                                        <h3 class="form_title">Thông tin liên hệ</h3>
-                                        <div class="group_fields_body">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <label class="control-label">Tên liên hệ <span class="red_require">*</span></label>
-                                                        <form:errors style="color: red" path= "lienHe"/>
-                                                        <input value="${sessionScope.userInfo.fullName}" class="form-control text-box single-line" path="lienHe"/>
+                                        <div class="group_fields">
+                                            <h3 class="form_title">Thông tin liên hệ</h3>
+                                            <div class="group_fields_body">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <label class="control-label">Tên liên hệ <span class="red_require">*</span></label>
+                                                            <input value="${sessionScope.userInfo.fullName}" class="form-control text-box single-line" name="lienHe"/>
                                                     </div>
                                                     <div class="col-sm-6 col-xs-12">
                                                         <label class="control-label">Điện thoại <span class="red_require">*</span></label>
-                                                        <form:errors style="color: red" path= "sdt"/>
-                                                        <input value="${sessionScope.userInfo.sdt}" class="form-control text-box single-line" path="sdt"/>                                            
+                                                        <input value="${sessionScope.userInfo.sdt}" class="form-control text-box single-line" name="sdt"/>                                            
                                                     </div>
                                                 </div>
                                             </div>
@@ -161,12 +146,8 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="clearfix ui-sortable default-theme">
-                                                            <label for="fileUpload">
-                                                                <img src= "<c:url value = "/resources/images/icon_upload2.png"/>" width="100" height="100" style="cursor: pointer;">
-                                                            </label>
-                                                            <input type="file" name="files" multiple="multiple" id="fileUpload" accept="image/*" style="display: none; visibility: none;">
-                                                            <div id="image-holder"></div>
-                                                        </div>		                                            	
+
+                                                            <input class="photo" type="file" name="Image">                                                        </div>		                                            	
                                                         <p class="help-block">
                                                             Tối đa 3 ảnh. Dung lượng không quá 6MB<br />
                                                         </p>
@@ -213,9 +194,9 @@
         <script src="<c:url value="/resources/js/post_create.min.js?v=20200305"/>"></script>
         <script src="<c:url value="/resources/js/upload.min.js?v=20200305"/>"></script>
         <script>$(function () {
-            $('#pop-login').modal('show');
-        });
-        $('#btnPostCreate').attr('disabled', true)</script>
+                $('#pop-login').modal('show');
+            });
+            $('#btnPostCreate').attr('disabled', true)</script>
         <script>
             $(function () {
                 $("#ddlUnit").val(2);
@@ -223,51 +204,18 @@
         </script>
         <!-- script để upload và prviewfile https://stackoverflow.com/questions/37262498/upload-images-in-spring-mvc-using-javascript-for-preview -->
 
-        <script>
-            $(document).ready(function () {
 
-                $("#fileUpload").on('change', function () {
-                    //Get count of selected files
-                    var countFiles = $(this)[0].files.length;
-                    var imgPath = $(this)[0].value;
-                    var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-                    var image_holder = $("#image-holder");
-                    image_holder.empty();
-                    if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-                        if (typeof (FileReader) != "undefined") {
-                            //loop for each file selected for uploaded.
-                            for (var i = 0; i < countFiles; i++)
-                            {
-                                var reader = new FileReader();
-                                reader.onload = function (e) {
-                                    $("<img />", {
-                                        "src": e.target.result,
-                                        "class": "thumb-image"
-                                    }).appendTo(image_holder);
-                                }
-                                image_holder.show();
-                                reader.readAsDataURL($(this)[0].files[i]);
-                            }
-                        } else {
-                            alert("This browser does not support FileReader.");
-                        }
-                    } else {
-                        alert("Pls select only images");
-                    }
-                });
-            });
-        </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42682349-1"></script>
         <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-                    gtag('config', 'UA-42682349-1');
+            gtag('config', 'UA-42682349-1');
         </script>
     </body>
 </html>
