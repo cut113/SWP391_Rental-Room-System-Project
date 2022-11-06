@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
                 		</div>
             		</div>
             		<div class="col-xs-12 col-md-8 block-left dang_tin">
-						<form:form action="dang-tin.htm" class="form frm-dangtin" enctype="multipart/form-data" modelAttribute="detail">               
+						<form action="dang-tin.htm" class="form frm-dangtin" enctype="multipart/form-data" modelAttribute="detail">               
 							<div class="form_step step1">
                         		<div class="group_fields">
                             		<h3 class="form_title">Thông tin cơ bản</h3>
@@ -199,7 +199,7 @@
 		                            <p class=" mgt-20" style="color: red">${message}</p>
 		                        </div>
 		                    </div>
-						</form:form>            
+						</form>            
 					</div>
        			</div>
    			</div>
