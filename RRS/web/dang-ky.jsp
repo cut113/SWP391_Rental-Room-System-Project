@@ -65,7 +65,7 @@
                     <nav class="navbar">                 
                         <ul class="navbar-nav">
                             <li class="menu-item-has-children">
-                                <a href="home.htm" rel="nofollow">Trang chủ</a>
+                                <a href="DefaultServlet" rel="nofollow">Trang chủ</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
@@ -83,9 +83,11 @@
                                 <a href="#" rel="nofollow">Hướng dẫn</a>
                             </li>
 
-                            <li>
-                                <a href="dang-tin.htm" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
-                            </li>
+                            <c:if test="${sessionScope.ACCOUNT != null}">
+                                <li>
+                                    <a href="dang-tin.jsp" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
+                                </li> 
+                            </c:if>
                         </ul>
                     </nav>
                 </div>

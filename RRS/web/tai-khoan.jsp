@@ -63,7 +63,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
                                                     <input class="form-control text-box single-line" name="sdt" value="${a.SDT}" placeholder="${sessionScope.ACCOUNT.SDT}"/>  
-                                                    <span class="input-group-addon"><span class="text text-success" title="Đã xác minh"><i class="fa fa-check" aria-hidden="true"></i></span></span>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

@@ -120,7 +120,7 @@
                             </li>
                             <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                                <li>
-                                <a href="dang-tin.htm" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
+                                <a href="dang-tin.jsp" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
                             </li> 
                             </c:if>
                             

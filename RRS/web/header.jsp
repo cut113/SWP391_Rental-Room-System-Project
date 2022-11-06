@@ -56,7 +56,7 @@
                         <a href="quan-ly-tin.htm"><i class="fa fa-list"></i><span>Quản lý tin</span></a>
                     </li>
                     <li>
-                        <a href="dang-tin.htm"><i class="fa fa-pencil-square-o"></i><span>Đăng tin </span></a>
+                        <a href="dang-tin.jsp"><i class="fa fa-pencil-square-o"></i><span>Đăng tin </span></a>
                     </li>
                 </ul>
             </div>
@@ -66,14 +66,14 @@
                         <div class="modal-body">
                             <div class="user-area clearfix">
                                 <div class="m-user-ava">
-                                    <a href="tai-khoan.htm"><img src= "<c:url value = "/resources/images/default-user-avatar-blue.jpg"/>" ></a>
+                                    <a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><img src= "<c:url value = "/resources/images/default-user-avatar-blue.jpg"/>" ></a>
                                 </div>
                                 <div style="float:left;width:60%; text-align:center">
                                     <div class="user-action">
-                                        <a href="tai-khoan.htm">${sessionScope.ACCOUNT.username}</a>
+                                        <a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}">${sessionScope.ACCOUNT.username}</a>
                                     </div>
                                     <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
-                                        <a href="dang-tin.htm" class="user-post"><strong><i class="fa fa-pencil-square-o"></i> Đăng tin</strong></a>
+                                        <a href="dang-tin.jsp" class="user-post"><strong><i class="fa fa-pencil-square-o"></i> Đăng tin</strong></a>
                                                 </c:if>
                                 </div>
                                 <div style="float:right;width:10%">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <ul class="navbar-nav">
-                                <li class="mobile-menuhome"><a href="home.htm" rel="nofollow">Trang chủ</a></li>
+                                <li class="mobile-menuhome"><a href="DefaultServlet" rel="nofollow">Trang chủ</a></li>
                                 <li>
                                     <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
                                 </li>
@@ -96,14 +96,14 @@
                                 </li>
                                 <li class="mobile-menuhelp"><span>Thông tin tài khoản</span></li>
                                 <li class="current-menu-item">
-                                    <a href="tai-khoan.htm"><i class="fa fa-user"></i>Thông tin cá nhân</a>
+                                    <a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><i class="fa fa-user"></i>Thông tin cá nhân</a>
                                 </li>		                       
                                 <li>
                                     <a href="quan-ly-tin.htm"><i class="fa fa-list-alt"></i>Quản lý tin</a>
                                 </li>
 
                                 <li>
-                                    <a href="thoat.htm" title="Thoát"><i class="fa fa-sign-out" aria-hidden="true"></i> Thoát</a>
+                                    <a href="LogoutServlet" title="Thoát"><i class="fa fa-sign-out" aria-hidden="true"></i> Thoát</a>
                                 </li>
                             </ul>
                         </div>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="pull-right">       
                         <div class="user_welcome">
-                            <div class="welcome_user_text">Xin chào, <strong><a rel="nofollow" href="tai-khoan.htm" class="text-blue">${sessionScope.ACCOUNT.username}</a></strong></div>
+                            <div class="welcome_user_text">Xin chào, <strong><a rel="nofollow" href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}" class="text-blue">${sessionScope.ACCOUNT.username}</a></strong></div>
                             <div class="dropdown user_welcome_dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Quản lý tài khoản
@@ -126,7 +126,7 @@
                                     <li>Mã tài khoản: <strong>${sessionScope.ACCOUNT.userID}</strong></li>
                                     <li role="separator" class="divider"></li>
                                         <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
-                                        <li><a rel="nofollow" href="dang-tin.htm" title="Đăng tin"><i class="fa fa-plus-circle" aria-hidden="true"></i> Đăng tin</a></li>
+                                        <li><a rel="nofollow" href="dang-tin.jsp" title="Đăng tin"><i class="fa fa-plus-circle" aria-hidden="true"></i> Đăng tin</a></li>
                                         <li><a rel="nofollow" href="ListRoomServlet" title="Quản lý tin"><i class="fa fa-list-alt" aria-hidden="true"></i> Quản lý tin đăng</a></li>
                                         </c:if>
 
@@ -168,7 +168,7 @@
                     <nav class="navbar">
                         <ul class="navbar-nav">
                             <li class="menu-item-has-children current-menu-item">
-                                <a href="home.htm" rel="nofollow">Trang chủ</a>
+                                <a href="DefaultServlet" rel="nofollow">Trang chủ</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
@@ -183,12 +183,14 @@
                                 <a href="tim-nguoi-o-ghep.htm" rel="nofollow">Tìm người ở ghép</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#" rel="nofollow">Hướng dẫn</a>
+                                <a href="https://thuephongtro.com/huong-dan.html" rel="nofollow">Hướng dẫn</a>
                             </li>
-
-                            <li>
+                            <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
+                              <li>
                                 <a href="dang-tin.htm" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
-                            </li>
+                            </li>  
+                            </c:if>
+                            
                         </ul>
                     </nav>
                 </div>

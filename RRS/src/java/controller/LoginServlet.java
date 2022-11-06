@@ -38,13 +38,13 @@ public class LoginServlet extends HttpServlet {
             AccountDTO account = dao.searchUser(username, password);
             //System.out.println("ID"+ account.getUserID());
             if (account == null) {
-                String error = "User or password is empty or error";
+                String error = "Tên đăng nhập hoặc mật khẩu sai hoặc để trống";
                 request.setAttribute("ERROR", error);
                 RequestDispatcher rd = request.getRequestDispatcher("dang-nhap.jsp");
                 rd.forward(request, response);
             } else {
                 if (!account.isTrangThai()) {
-                    String error = "Account is disabled or deleted";
+                    String error = "Tài khoản đã bị khóa hoặc không tồn tại";
                     request.setAttribute("ERROR", error);
                     RequestDispatcher rd = request.getRequestDispatcher("dang-nhap.jsp");
                     rd.forward(request, response);

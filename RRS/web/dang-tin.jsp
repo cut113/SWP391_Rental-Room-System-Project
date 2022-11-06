@@ -66,6 +66,15 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <label class="control-label">Loại <span class="red_require">*</span></label>
+                                                            <form:errors style="color: red" path= "tieuDe"/>
+                                                            <input class="form-control text-box single-line" path="tieuDe"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
                                                         
                                                     <div class="col-sm-12 col-xs-12">
                                                         <label class="control-label">Diện tích <span class="red_require">*</span></label>
