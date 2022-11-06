@@ -39,7 +39,7 @@
                                             <div class="col-xs-12 col-md-10">
                                                 <div class="news-item item-vip5">
                                                     <div class="news-thumb"> 
-                                                        <a href='detail-id-${item.tieude}.html'>
+                                                        <a href='RoomDetailServlet?maphong=${item.maPhong}'>
                                                             <c:choose>
                                                                 <c:when test="${ empty item.url}">
                                                                     <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
@@ -54,7 +54,7 @@
                                                     </div>
                                                     <div class="news-info">
                                                         <h4 class="news-title">
-                                                            <a href="detail-id-${item.maPhong}.html" title="${item.tieude}">${item.tieude}</a>
+                                                            <a href="RoomDetailServlet?maphong=${item.maPhong}" title="${item.tieude}">${item.tieude}</a>
                                                         </h4>
                                                         <div class="area mgt-5">
                                                             <span><i class="fa fa-area-chart"></i> <b>${item.dienTich} m&#178;</b></span> <span class="rating" style="color: #fc0">

@@ -145,6 +145,7 @@ public class RoomDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
+        System.out.println("get dc room chua ma sua");
         try {
             con = new DBUtils().makeConnection();
             if (con != null) {
@@ -155,6 +156,7 @@ public class RoomDAO {
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
+                    System.out.println("da chay cau sql");
                     String tieuDe = rs.getString("TieuDe");
                     String Loai = rs.getString("Loai");
                     String lienHe = rs.getString("LienHe");
