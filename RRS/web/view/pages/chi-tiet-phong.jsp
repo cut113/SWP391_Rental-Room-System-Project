@@ -34,30 +34,16 @@
                                                 </div>
                                             </div>
                                             <div class="summary_row clearfix">
-                                                <div class="post_summary_left">
-                                                    <div class="summary_item_headline">Chuyên mục:</div>
-                                                    <div class="summary_item_info">
-                                                        <c:choose>
-                                                            <c:when test="${detail.loai == '1'}">
-                                                                <h2><a href="cho-thue-phong-tro.htm">Cho thuê phòng trọ</a></h2>
-                                                            </c:when>
-                                                            <c:when test="${detail.loai == '2'}">
-                                                                <h2><a href="cho-thue-can-ho.htm">Cho thuê căn hộ</a></h2>
-                                                            </c:when>
-                                                            <c:when test="${detail.loai == '3'}">
-                                                                <h2><a href="cho-thue-nha-nguyen-can">Cho thuê nhà nguyên căn</a></h2>
-                                                            </c:when>
-                                                            <c:when test="${detail.loai == '4'}">
-                                                                <h2><a href="tim-nguoi-o-ghep">Tìm người ở ghép</a></h2>
-                                                            </c:when>
-                                                        </c:choose>
-                                                    </div>
-                                                </div>
-                                                <div class="post_summary_right">
+                                                <div class="post_summary_left ">
                                                     <div class="summary_item_headline">Mã tin:</div>
                                                     <div class="summary_item_info">${detail.maPhong}</div>
                                                 </div>
+                                                <div class="post_summary_right ">
+                                                    <div class="summary_item_headline">Loại:</div>
+                                                    <div class="summary_item_info">${detail.loai}</div>
+                                                </div>
                                             </div>
+                                            
                                             <div class="summary_row clearfix">
                                                 <div class="post_summary_left">
                                                     <div class="summary_item_headline">Giá cho thuê:</div>
@@ -88,7 +74,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="block-content" id="_motachitiet">
@@ -105,7 +90,14 @@
                                         <span class="block_headline">Hình ảnh</span>
                                         <div class="post-photos">
                                             <div id="slider">
-
+                                                <c:choose>
+                                                    <c:when test="${ empty detail.url}">
+                                                        <img itemprop="image" src= "<c:url value = "/resources/images/default.jpg"/>" alt="${detail.tieude}" title="${detail.tieude}">
+                                                    </c:when>
+                                                    <c:when test="${ not empty detail.url}">
+                                                        <img src= "<c:url value = "/resources/anh/${detail.url}"/>" alt="${detail.tieude}" title="${detail.tieude}" />
+                                                    </c:when>
+                                                </c:choose>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +109,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-4 sidebar-right">	
-                        
+                        <jsp:include page="sideBarInfo.jsp"></jsp:include>
                         </div>
                     </div>
                 </div>	
@@ -187,13 +179,13 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42682349-1"></script>
         <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-                    gtag('config', 'UA-42682349-1');
+            gtag('config', 'UA-42682349-1');
         </script>
     </body>
 </html>
