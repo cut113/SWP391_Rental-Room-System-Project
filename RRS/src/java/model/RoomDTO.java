@@ -22,7 +22,7 @@ public class RoomDTO {
     int maDuong;
     int maUser;
     String url;
-    
+    boolean trangThai;
 
     public RoomDTO() {
     }
@@ -40,6 +40,24 @@ public class RoomDTO {
         this.maDuong = maDuong;
         this.maUser = maUser;
         this.url = url;
+    }
+
+   
+
+    public RoomDTO(int maPhong, String Tieude, String Loai, String LienHe, String SDT, int DienTich, float GiaThue, String DiaChi, String GhiChu, int maDuong, int maUser, String url, boolean trangThai) {
+        this.maPhong = maPhong;
+        this.Tieude = Tieude;
+        this.Loai = Loai;
+        this.LienHe = LienHe;
+        this.SDT = SDT;
+        this.DienTich = DienTich;
+        this.GiaThue = GiaThue;
+        this.DiaChi = DiaChi;
+        this.GhiChu = GhiChu;
+        this.maDuong = maDuong;
+        this.maUser = maUser;
+        this.url = url;
+        this.trangThai = trangThai;
     }
 
     public int getMaPhong() {
@@ -137,7 +155,13 @@ public class RoomDTO {
     public void setUrl(String url) {
         this.url = url;
     }
-    
+     public boolean isTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(boolean trangThai) {
+        this.trangThai = trangThai;
+    }
     
     
 }

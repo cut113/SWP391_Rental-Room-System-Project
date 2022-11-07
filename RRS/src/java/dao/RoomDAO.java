@@ -43,8 +43,9 @@ public class RoomDAO {
                     String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
                     int maUser = rs.getInt("MaUser");
+                    boolean trangThai = rs.getBoolean("TrangThai");
                     String url = getUrlByID(maPhong);
-                    RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+                    RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url, trangThai);
                     listStudents.add(dto);
                 }
                 return listStudents;
@@ -73,7 +74,7 @@ public class RoomDAO {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "SELECT * FROM PhongTro \n"
-                        + "WHERE MaUser=?";
+                        + "WHERE MaUser=? and TrangThai= 1";
                 ps = con.prepareStatement(sql);
                 ps.setInt(1, maUser);
                 rs = ps.executeQuery();
@@ -148,7 +149,7 @@ public class RoomDAO {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO PhongTro \n"
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?) \n "
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?) \n "
                         + "insert into CT_HinhAnh values(@@IDENTITY,?)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, tieuDe);
@@ -161,7 +162,8 @@ public class RoomDAO {
                 ps.setString(8, ghiChu);
                 ps.setInt(9, maDuong);
                 ps.setInt(10, maUser);
-                ps.setString(11, image);
+                ps.setBoolean(11,true);
+                ps.setString(12, image);
 
                 int row = ps.executeUpdate();
                 if (row > 0) {
@@ -234,7 +236,7 @@ public class RoomDAO {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "INSERT INTO PhongTro \n"
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?)";
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, tieuDe);
                 ps.setString(2, Loai);
@@ -246,6 +248,7 @@ public class RoomDAO {
                 ps.setString(8, ghiChu);
                 ps.setInt(9, maDuong);
                 ps.setInt(10, maUser);
+                ps.setBoolean(11, true);
 
                 int row = ps.executeUpdate();
                 if (row > 0) {
@@ -272,8 +275,9 @@ public class RoomDAO {
         try {
             con = new DBUtils().makeConnection();
             if (con != null) {
-                String sql = "DELETE FROM PhongTro \n"
-                        + "WHERE Maphong=?";
+                String sql = "UPDATE Phongtro\n"
+                        + "SET TrangThai= ~TrangThai \n"
+                        + "WHERE MaPhong=?";
                 ps = con.prepareStatement(sql);
                 ps.setInt(1, maphong);
 
@@ -303,7 +307,7 @@ public class RoomDAO {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "UPDATE Phongtro\n"
-                        + "SET TieuDe=?, Loai =? , LienHe=? , SDT=? , DienTich =? , Giathue= ? , DiaChi = ? , GhiChu= ? \n"
+                        + "SET TieuDe=?, Loai =? , LienHe=? , SDT=? , DienTich =? , Giathue= ? , DiaChi = ? , GhiChu= ?\n"
                         + "WHERE MaPhong=?";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, tieude);

@@ -45,10 +45,10 @@
                                                                     <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
                                                                 </c:when>
                                                                 <c:when test="${ not empty item.url}">
-                                                                   <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
+                                                                    <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
                                                                 </c:when>
                                                             </c:choose>
-                                                           
+
 
                                                         </a>
                                                     </div>
@@ -71,6 +71,9 @@
                                                         <div class="price mgt-5">
                                                             <span>${item.giaThue} Triệu/tháng</span>
                                                         </div>
+                                                        <c:if test="${not item.trangThai}">
+                                                            <font color="red">Hết Phòng</font>
+                                                        </c:if>
                                                     </div>
                                                 </div>
                                             </div>

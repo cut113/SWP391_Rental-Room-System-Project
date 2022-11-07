@@ -41,8 +41,6 @@ public class AddNewRoomServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             System.out.println("Add new RoomServlet");
@@ -59,9 +57,9 @@ public class AddNewRoomServlet extends HttpServlet {
             int maUser = currentAccount.getUserID();
 
             Part image = request.getPart("Image");
-            
 
-            String path = "E:\\FPT\\Kì 5 Chuyên Ngành\\SWP391\\Full Project\\RentalRoomProject\\RRS\\web\\resources\\anh";
+//                        String path = "E:\\FPT\\Kì 5 Chuyên Ngành\\SWP391\\Full Project\\RentalRoomProject\\RRS\\web\\resources\\anh";
+            String path = "D:\\backup\\RRS\\web\\resources\\anh";
             String fileName = image.getSubmittedFileName();
             String filePath = path + "\\" + fileName;
             System.out.println("duong dan" + filePath);
@@ -70,8 +68,8 @@ public class AddNewRoomServlet extends HttpServlet {
             System.out.println(tieude + loai + dientich + giathue + diachi + ghichu + lienhe + sdt + maUser);
             RoomDAO dao = new RoomDAO();
 
-            dao.addRoom(tieude, loai, lienhe, sdt, dientich, giathue, diachi, ghichu, maduong, maUser, fileName );
-            request.getRequestDispatcher("DefaultServlet").forward(request, response);
+            dao.addRoom(tieude, loai, lienhe, sdt, dientich, giathue, diachi, ghichu, maduong, maUser, fileName);
+            response.sendRedirect("DefaultServlet");
 
         }
     }

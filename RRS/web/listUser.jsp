@@ -95,17 +95,18 @@
                                     <h1>Room List</h1>
                                     <table class="table table-hover" border="1px black">
                                         <tr>
-                                            <td>MaPhong</td>
-                                            <td>TieuDe</td>
-                                            <td>Loai</td>
-                                            <td>LienHe</td>
-                                            <td>SDT</td>
-                                            <td>DienTich</td>
-                                            <td>GiaThue</td>
-                                            <td>DiaChi</td>
-                                            <td>GhiChu</td>
-                                            <td>MaDuong</td>
-                                            <td>MaUser</td>
+                                            <td>Mã Phòng</td>
+                                            <td>Tiêu Đề</td>
+                                            <td>Loại</td>
+                                            <td>Liên Hệ</td>
+                                            <td>SĐT</td>
+                                            <td>Diện Tích</td>
+                                            <td>Giá Thuê</td>
+                                            <td>Địa Chỉ</td>
+                                            <td>Ghi Chú</td>
+                                            <td>Mã Đường</td>
+                                            <td>Mã User</td>
+                                            <td>Trạng Thái</td>
                                             <td>Update</td>
                                             <td>Delete</td>
 
@@ -148,6 +149,9 @@
                                                     <c:out value="${room.maUser}" />
                                                 </td>
                                                 <td>
+                                                    <c:out value="${room.trangThai}" />
+                                                </td>
+                                                <td>
                                                     <a href="UpdateRoomServlet?maphong=${room.maPhong}">
                                                         <button type="button"
                                                             class="btn btn-primary btn-xs">Update</button></a>
@@ -155,7 +159,7 @@
                                                 <td>
                                                     <a href="DeleteRoomServlet?maphong=${room.maPhong}">
                                                         <button type="button"
-                                                            class="btn btn-danger btn-xs">Delete</button>
+                                                            class="btn btn-danger btn-xs">Swap</button>
                                                     </a>
                                                 </td>
                                             </tr>
