@@ -199,9 +199,10 @@ public class SearchDAO {
                         String diaChi = rs.getString("DiaChi");
                         String ghiChu = rs.getString("GhiChu");
                         int maUser = rs.getInt("MaUser");
+                        boolean trangThai = rs.getBoolean("TrangThai");
                         RoomDAO dao = new RoomDAO();
                         String url = dao.getUrlByID(maPhong);
-                        RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, gia, diaChi, ghiChu, maDuong, maUser, url);
+                        RoomDTO dto = new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, gia, diaChi, ghiChu, maDuong, maUser, url, trangThai);
                         list.add(dto);
                     }
                     return list;

@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-4 sidebar-right">	
-                        <jsp:include page="sideBarInfo.jsp"></jsp:include>
+                        
                         </div>
                     </div>
                 </div>	
