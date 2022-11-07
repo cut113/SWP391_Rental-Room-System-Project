@@ -58,8 +58,8 @@ public class AddNewRoomServlet extends HttpServlet {
 
             Part image = request.getPart("Image");
 
-//                        String path = "E:\\FPT\\Kì 5 Chuyên Ngành\\SWP391\\Full Project\\RentalRoomProject\\RRS\\web\\resources\\anh";
-            String path = "D:\\backup\\RRS\\web\\resources\\anh";
+                        String path = "E:\\FPT\\Kì 5 Chuyên Ngành\\SWP391\\Full Project\\RentalRoomProject\\RRS\\web\\resources\\anh";
+//            String path = "D:\\backup\\RRS\\web\\resources\\anh";
             String fileName = image.getSubmittedFileName();
             String filePath = path + "\\" + fileName;
             System.out.println("duong dan" + filePath);

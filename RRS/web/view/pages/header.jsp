@@ -116,7 +116,7 @@
                                 <a href="tim-nguoi-o-ghep.htm" rel="nofollow">Tìm người ở ghép</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#" rel="nofollow">Hướng dẫn</a>
+                                <a href="https://thuephongtro.com/huong-dan.html" rel="nofollow">Hướng dẫn</a>
                             </li>
                             <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                                <li>

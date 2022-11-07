@@ -14,23 +14,23 @@
                 <div class="access_page">
                     <div class="page_content intro_page clearfix">
                         <ul class="nav nav-tabs tab_huongdan" role="tablist">
-                            <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
+                        <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                             <li class="active"><a href="quan-ly-tin.jsp"><i class="fa fa-list-alt"></i> Quản lý tin</a></li>
                             </c:if>
-                            <li><a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <h4>QUẢN LÝ TIN</h4>
-                            <hr />
-                            <div class="dataTables_wrapper form-inline">
-                                <table class="table table-bordered table-striped table-vcenter dataTable no-footer table_banggia" role="grid">
-                                    <thead>
-                                        <tr>
-                                            <td class="text-center">Tiêu đề</td>
-                                            <td class="text-center">Thao tác</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                        <li><a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <h4>QUẢN LÝ TIN</h4>
+                        <hr />
+                        <div class="dataTables_wrapper form-inline">
+                            <table class="table table-bordered table-striped table-vcenter dataTable no-footer table_banggia" role="grid">
+                                <thead>
+                                    <tr>
+                                        <td class="text-center">Tiêu đề</td>
+                                        <td class="text-center">Thao tác</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     <c:forEach var="item" varStatus="loop" items="${listR}">
                                         <tr>
 
@@ -39,17 +39,17 @@
                                                     <div class="news-item item-vip5" style="border-bottom:0;margin-bottom:0;padding-bottom:0">
                                                         <div class="news-thumb">
                                                             <a href='RoomDetailServlet?maphong=${item.maPhong}'>
-                                                            <c:choose>
-                                                                <c:when test="${ empty item.url}">
-                                                                    <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
-                                                                </c:when>
-                                                                <c:when test="${ not empty item.url}">
-                                                                   <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
-                                                                </c:when>
-                                                            </c:choose>
-                                                           
+                                                                <c:choose>
+                                                                    <c:when test="${ empty item.url}">
+                                                                        <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
+                                                                    </c:when>
+                                                                    <c:when test="${ not empty item.url}">
+                                                                        <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
+                                                                    </c:when>
+                                                                </c:choose>
 
-                                                        </a>
+
+                                                            </a>
                                                         </div>
                                                         <div class="news-info">
                                                             <h4 class="news-title">
@@ -66,12 +66,26 @@
                                                                         </span>
                                                                     </span>
                                                                 </div>
-                                                                        <div class="pdt-5 clearfix">
+                                                                <div class="pdt-5 clearfix">
                                                                     <span class="mgr-15">Giá thuê: 
                                                                         <span class="text text-primary">
                                                                             ${item.giaThue} triệu đồng
                                                                         </span>
                                                                     </span>
+                                                                    <c:if test="${not item.trangThai}">
+                                                                        <span class="mgr-15">Trạng thái: 
+                                                                            <span class="text text-primary">
+                                                                                Hết phòng
+                                                                            </span>
+                                                                        </span>
+                                                                    </c:if>
+                                                                        <c:if test="${item.trangThai}">
+                                                                        <span class="mgr-15">Trạng thái: 
+                                                                            <span class="text text-primary">
+                                                                                Còn phòng
+                                                                            </span>
+                                                                        </span>
+                                                                    </c:if>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -80,7 +94,7 @@
                                             </td>
                                             <td>
                                                 <p class="text-center"><a href="UpdateRoomServlet?maphong=${item.maPhong}" title="Sửa tin" class="label label-info"><i class="fa fa-edit"></i> Sửa tin</a></p>
-                                                <p class="text-center"><a href="DeleteRoomServlet?maphong=${item.maPhong}"  title="Xóa tin" class="label label-info"><i class="fa fa-remove"></i> Xóa tin</a></p>
+                                                <p class="text-center"><a href="DeleteRoomServlet?maphong=${item.maPhong}"  title="Đổi trạng thái" class="label label-info"><i class="fa fa-edit"></i> Đổi trạng thái</a></p>
                                             </td>
 
                                         </tr>

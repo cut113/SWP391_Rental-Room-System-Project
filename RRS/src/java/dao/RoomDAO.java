@@ -74,7 +74,7 @@ public class RoomDAO {
             con = new DBUtils().makeConnection();
             if (con != null) {
                 String sql = "SELECT * FROM PhongTro \n"
-                        + "WHERE MaUser=? and TrangThai= 1";
+                        + "WHERE MaUser=?";
                 ps = con.prepareStatement(sql);
                 ps.setInt(1, maUser);
                 rs = ps.executeQuery();
@@ -90,9 +90,10 @@ public class RoomDAO {
                     String diaChi = rs.getString("DiaChi");
                     String ghiChu = rs.getString("GhiChu");
                     int maDuong = rs.getInt("MaDuong");
+                    boolean trangThai = rs.getBoolean("TrangThai");
                     String url = getUrlByID(maPhong);
 
-                    RoomDTO dto= new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url);
+                    RoomDTO dto= new RoomDTO(maPhong, tieuDe, lienHe, Loai, SDT, dienTich, giaThue, diaChi, ghiChu, maDuong, maUser, url,trangThai);
                     listStudents.add(dto);
                 }
                 return listStudents;
