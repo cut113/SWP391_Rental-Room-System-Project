@@ -57,7 +57,14 @@
                                             <div class="summary_row clearfix">
                                                 <div class="post_summary_left">
                                                     <div class="summary_item_headline">Liên hệ:</div>
-                                                    <div class="summary_item_info">${detail.lienHe}</div>
+                                                    <c:if test="${sessionScope.ACCOUNT == null}">
+                                                        <div class="summary_item_info">Đăng nhập để xem thông tin</div>
+                                                    </c:if>
+                                                    <c:if test="${sessionScope.ACCOUNT != null}">
+                                                        <div class="summary_item_info">${detail.lienHe}</div>
+                                                    </c:if>
+                                                    
+                                                    
                                                 </div>
                                                 <div class="post_summary_right">
                                                 </div>
@@ -66,8 +73,15 @@
                                                 <div class="post_summary_left">
                                                     <div class="summary_item_headline">Điện thoại:</div>
                                                     <div class="summary_item_info summary_item_info_phone">
+                                                        
+                                                    <c:if test="${sessionScope.ACCOUNT != null}">
                                                         <a href="tel:${detail.SDT}" class="js-get-phone" data-phone="${detail.SDT}"><i class="fa fa-phone" aria-hidden="true"></i> <span>${detail.SDT}</span></a>
+                                                    </c:if>
                                                     </div>
+                                                        <c:if test="${sessionScope.ACCOUNT == null}">
+                                                        <div class="summary_item_info">Đăng nhập để xem thông tin </div>
+                                                    </c:if>
+                                                    
                                                 </div>
                                                 <div class="post_summary_right">
                                                 </div>

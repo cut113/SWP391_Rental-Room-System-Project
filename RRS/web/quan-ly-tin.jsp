@@ -38,22 +38,22 @@
                                                 <div class="list-all-new">
                                                     <div class="news-item item-vip5" style="border-bottom:0;margin-bottom:0;padding-bottom:0">
                                                         <div class="news-thumb">
-                                                            <a href="detail-id-${item.maPhong}.htm" target="_blank">
-                                                                <c:choose>
-                                                                    <c:when test="${ empty item.url}">
-                                                                        <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
-                                                                    </c:when>
-                                                                    <c:when test="${ not empty item.url}">
-                                                                        <c:forEach var="itemimg" begin="0" end="0" varStatus="loop" items="${item.url}">                             
-                                                                            <img src= "<c:url value = "/files/${item.url}"/>" alt="${item.tieude}" class="lazyload">
-                                                                        </c:forEach>  
-                                                                    </c:when>
-                                                                </c:choose>
-                                                            </a>
+                                                            <a href='RoomDetailServlet?maphong=${item.maPhong}'>
+                                                            <c:choose>
+                                                                <c:when test="${ empty item.url}">
+                                                                    <img src= "<c:url value = "/resources/images/default.jpg"/>" alt="${item.tieude}" class="lazyload">
+                                                                </c:when>
+                                                                <c:when test="${ not empty item.url}">
+                                                                   <img src= "<c:url value = "/resources/anh/${item.url}"/>" alt="${item.tieude}" class="lazyload">
+                                                                </c:when>
+                                                            </c:choose>
+                                                           
+
+                                                        </a>
                                                         </div>
                                                         <div class="news-info">
                                                             <h4 class="news-title">
-                                                                <a href="detail-id-${item.maPhong}.htm" title="detail" target="_blank">${item.tieude}</a>
+                                                                <a href='RoomDetailServlet?maphong=${item.maPhong}' title="detail" target="_blank">${item.tieude}</a>
                                                             </h4>
                                                             <div class="help-block">
                                                                 <div class="pdt-5">

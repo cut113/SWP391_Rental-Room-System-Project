@@ -11,50 +11,39 @@
 <body>
 	
             	<div class="panel panel-default search-box">
-            		<form:form action="searching.htm" modelAttribute="command">
-	    				<div class="panel-heading">
-	        				<div class="title" id="mbSearch">Tìm kiếm phòng trọ</div>
-	    				</div>
-	    				<div class="panel-body">
-		        			<div class="list-group">
-					             <form:select path="loai" class="form-control">
-           							<form:option value="" label="--Chọn loại tin--"/>
-           							<form:options items="${sessionScope.listType}" />
-       							 </form:select>
-		        			</div>
-					        <div class="list-group">
-					            <form:select path="TP" class="form-control">
-			                    	<form:option value="" label="--Chọn thành Phố--"/>
-			                    	<form:options items="${sessionScope.listTP}" itemValue="MaTP" itemLabel="TenTP"/>
-				                </form:select>
-					        </div>
-					        <div class="list-group">
-					            <form:select path="Quan" class="form-control">
-						            <form:option value="" label="--Chọn quận huyện--"/>
-						            <form:options items="${sessionScope.listQ}" itemValue="MaQuan" itemLabel="TenQuan"/>
-						        </form:select>
-					        </div>
-					        <div class="list-group">
-					           <form:select path="Duong" class="form-control">
-		                    		<form:option value="" label="--Chọn đường phố--"/>
-						            <form:options items="${sessionScope.listD}" itemValue="MaDuong" itemLabel="TenDuong"/>
-						       </form:select>
-					        </div>
-					        <div class="list-group">
-					            <form:select path="gia" style="width:100%" class="form-control">
-           							<form:option value="0" label="--Chọn giá thuê--"/>
-           							<form:options items="${sessionScope.listPrice}"/>
-       							</form:select>
-					        </div>
-					        <div class="list-group">
-					            <form:select path="dienTich" style="width:100%" class="form-control">
-           							<form:option value="0" label="--Chọn diện tích--"/>
-           							<form:options items="${sessionScope.listArea}" />
-       							</form:select>
-					        </div>
-	            		 		<input type="submit" value="Tìm Kiếm" class="btn btn-primary btn_search" id="btnSearch">
-	    				</div>
-    				</form:form>
+            		<form action="SearchServlet" method="POST">
+                        <h3 class="title">Tìm kiếm nhanh</h3>
+                        <div class="bs-content">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <select path="Quan" class="form-control" name="TenQuan">
+                                        <option value="" label="--Chọn quận huyện--"/>
+                                        <c:forEach var="q" items="${Q}" varStatus="counter">
+                                            <option value=${q.getTenQuan()}  itemValue="maQuan" itemLabel="tenQuan">${q.getTenQuan()}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <select path="Duong" class="form-control" name="TenDuong">
+                                        <option value="" label="--Chọn đường phố--"/>
+                                        <c:forEach var="d" items="${D}" varStatus="counter">
+                                            <option value="${d.getDuongPho()}">${d.getDuongPho()}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <input type="text" placeholder="Trong tầm giá (Triệu VNĐ)" style="width:100%" class="form-control" name="Gia"></input>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <input type="text" placeholder="Trong diện tích (m&#178)" style="width:100%" class="form-control" name="DienTich"></input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bs-search">
+                            <i class="fa fa-search"></i>
+                            <input type="submit" value="Tìm Kiếm" class="button">
+                        </div>
+                    </form>
 				</div>
 </body>
 </html>
