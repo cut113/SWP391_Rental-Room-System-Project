@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="resources/css/style.css"/>
+        <link rel="icon" href="<c:url value ="/resources/images/favicon.ico"/>" />
     </head>
     <body>
         <form action="UpdateRoomServlet" method="POST">

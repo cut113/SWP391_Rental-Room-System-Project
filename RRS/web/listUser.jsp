@@ -9,6 +9,7 @@
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>List Page</title>
+                <link rel="icon" href="<c:url value ="/resources/images/favicon.ico"/>" />
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
                 <link rel="stylesheet"
                     href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">

@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Chi tiết phòng</title>
+        <link rel="icon" href="<c:url value ="/resources/images/favicon.ico"/>" />
     </head>
     <body>
         <c:choose>

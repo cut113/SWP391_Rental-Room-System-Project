@@ -7,6 +7,7 @@
         <meta charset="utf-8" />
         <title>Thông tin tài khoản</title>
         <base href="${pageContext.servletContext.contextPath}/">
+        <link rel="icon" href="<c:url value ="/resources/images/favicon.ico"/>" />
     </head>
     <body>
         <jsp:include page="header.jsp"></jsp:include>

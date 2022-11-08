@@ -6,6 +6,7 @@
     <head>
         <meta charset= "UTF-8">
         <title>Tìm Phòng Trọ</title>
+        <link rel="icon" href="<c:url value ="/resources/images/favicon.ico"/>" />
         <base href="${pageContext.servletContext.contextPath}/">
     </head>
     <body>
