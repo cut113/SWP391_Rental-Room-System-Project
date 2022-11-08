@@ -82,18 +82,7 @@
                             </div>
                             <ul class="navbar-nav">
                                 <li class="mobile-menuhome"><a href="DefaultServlet" rel="nofollow">Trang chủ</a></li>
-                                <li>
-                                    <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
-                                </li>
-                                <li>
-                                    <a href="cho-thue-can-ho.htm" rel="nofollow">Cho thuê căn hộ</a>
-                                </li>
-                                <li>
-                                    <a href="cho-thue-nha-nguyen-can.htm" rel="nofollow">Nhà nguyên căn</a>
-                                </li>
-                                <li>
-                                    <a href="tim-nguoi-o-ghep.htm" rel="nofollow">Tìm người ở ghép</a>
-                                </li>
+                                
                                 <li class="mobile-menuhelp"><span>Thông tin tài khoản</span></li>
                                 <li class="current-menu-item">
                                     <a href="UpdateAccountServlet?userName=${sessionScope.ACCOUNT.username}"><i class="fa fa-user"></i>Thông tin cá nhân</a>
@@ -170,24 +159,13 @@
                             <li class="menu-item-has-children current-menu-item">
                                 <a href="DefaultServlet" rel="nofollow">Trang chủ</a>
                             </li>
-                            <li class="menu-item-has-children">
-                                <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="cho-thue-can-ho.htm" rel="nofollow">Cho thuê căn hộ</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="cho-thue-nha-nguyen-can.htm" rel="nofollow">Nhà nguyên căn</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="tim-nguoi-o-ghep.htm" rel="nofollow">Tìm người ở ghép</a>
-                            </li>
+
                             <li class="menu-item-has-children">
                                 <a href="https://thuephongtro.com/huong-dan.html" rel="nofollow">Hướng dẫn</a>
                             </li>
                             <c:if test="${sessionScope.ACCOUNT.phanQuyen == 2}">
                               <li>
-                                <a href="dang-tin.htm" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
+                                <a href="dang-tin.jsp" title="Đăng tin"><i class="fa fa-pencil-square-o"></i>Đăng tin</a>
                             </li>  
                             </c:if>
                             

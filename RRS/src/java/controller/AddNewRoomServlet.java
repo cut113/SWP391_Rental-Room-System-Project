@@ -42,7 +42,8 @@ public class AddNewRoomServlet extends HttpServlet {
             throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
             System.out.println("Add new RoomServlet");
             String tieude = request.getParameter("tieuDe");
             String loai = request.getParameter("loai");
@@ -67,7 +68,7 @@ public class AddNewRoomServlet extends HttpServlet {
 
             System.out.println(tieude + loai + dientich + giathue + diachi + ghichu + lienhe + sdt + maUser);
             RoomDAO dao = new RoomDAO();
-
+           
             dao.addRoom(tieude, loai, lienhe, sdt, dientich, giathue, diachi, ghichu, maduong, maUser, fileName);
             response.sendRedirect("DefaultServlet");
 
@@ -107,7 +108,7 @@ public class AddNewRoomServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (Exception ex) {
-            Logger.getLogger(AddNewRoomServlet.class.getName()).log(Level.SEVERE, null, ex);
+            response.sendRedirect("not-found-404.jsp");
         }
     }
 

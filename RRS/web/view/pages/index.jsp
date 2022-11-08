@@ -90,15 +90,15 @@
                             </h3>
                             <div class="sidebarbox-body">
                                 <ul class="box-lastnews">
-                                    <li><a title="Cho thuê phòng trọ Hồ Chí Minh" href="#">Cho thuê phòng trọ Hồ Chí Minh</a></li>
-                                    <li><a title="Cho thuê phòng trọ Hà Nội" href="#">Cho thuê phòng trọ Hà Nội</a></li>
-                                    <li><a title="Cho thuê phòng trọ Đà Nẵng" href="#">Cho thuê phòng trọ Đà Nẵng</a></li>
-                                    <li><a title="Cho thuê phòng trọ Đồng Nai" href="#">Cho thuê phòng trọ Đồng Nai</a></li>
-                                    <li><a title="Cho thuê phòng trọ Bình Dương" href="#">Cho thuê phòng trọ Bình Dương</a></li>
-                                    <li><a title="Cho thuê phòng trọ Bà Rịa Vũng Tàu" href="#">Cho thuê phòng trọ Bà Rịa Vũng Tàu</a></li>
-                                    <li><a title="Cho thuê phòng trọ Cần Thơ" href="#">Cho thuê phòng trọ Cần Thơ</a></li>
-                                    <li><a title="Cho thuê phòng trọ Hải Phòng" href="#">Cho thuê phòng trọ Hải Phòng</a></li>
-                                    <li><a title="Cho thuê phòng trọ Thừa Thiên Huế" href="#">Cho thuê phòng trọ Thừa Thiên Huế</a></li>
+                                    <li><a title="Cho thuê phòng trọ Hồ Chí Minh" href="https://thuephongtro.com/cho-thue-phong-tro-ho-chi-minh">Cho thuê phòng trọ Hồ Chí Minh</a></li>
+                                    <li><a title="Cho thuê phòng trọ Hà Nội" href="https://thuephongtro.com/cho-thue-phong-tro-ha-noi">Cho thuê phòng trọ Hà Nội</a></li>
+                                    <li><a title="Cho thuê phòng trọ Đà Nẵng" href="https://thuephongtro.com/cho-thue-phong-tro-da-nang">Cho thuê phòng trọ Đà Nẵng</a></li>
+                                    <li><a title="Cho thuê phòng trọ Đồng Nai" href="https://thuephongtro.com/cho-thue-phong-tro-dong-nai">Cho thuê phòng trọ Đồng Nai</a></li>
+                                    <li><a title="Cho thuê phòng trọ Bình Dương" href="https://thuephongtro.com/cho-thue-phong-tro-binh-duong">Cho thuê phòng trọ Bình Dương</a></li>
+                                    <li><a title="Cho thuê phòng trọ Bà Rịa Vũng Tàu" href="https://thuephongtro.com/cho-thue-phong-tro-ba-ria-vung-tau">Cho thuê phòng trọ Bà Rịa Vũng Tàu</a></li>
+                                    <li><a title="Cho thuê phòng trọ Cần Thơ" href="https://thuephongtro.com/cho-thue-phong-tro-can-tho">Cho thuê phòng trọ Cần Thơ</a></li>
+                                    <li><a title="Cho thuê phòng trọ Hải Phòng" href="https://thuephongtro.com/cho-thue-phong-tro-hai-phong">Cho thuê phòng trọ Hải Phòng</a></li>
+                                    <li><a title="Cho thuê phòng trọ Thừa Thiên Huế" href="https://thuephongtro.com/cho-thue-phong-tro-thua-thien-hue">Cho thuê phòng trọ Thừa Thiên Huế</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -113,11 +113,11 @@
                             </h3>
                             <div class="sidebarbox-body">
                                 <ul class="box-lastnews">
-                                    <li><a href="#" title="{Chia sẻ} Kinh doanh cho thuê phòng trọ có phải đóng thuế gì hay không?">{Chia sẻ} Kinh doanh cho thuê phòng trọ có phải đóng thuế gì hay không?</a></li>
-                                    <li><a href="#" title="Những điều cần lưu ý trong việc quản lý nhà trọ">Những điều cần lưu ý trong việc quản lý nhà trọ</a></li>
-                                    <li><a href="#" title="Cẩn thận khi đi tìm thuê phòng trọ, nhà trọ với sinh viên mới">Cẩn thận khi đi tìm thuê phòng trọ, nhà trọ với sinh viên mới</a></li>
-                                    <li><a href="#" title="Những điều bạn nên biết để bảo đảm quyền lợi khi đi thuê phòng trọ">Những điều bạn nên biết để bảo đảm quyền lợi khi đi thuê phòng trọ</a></li>
-                                    <li><a href="#" title="Lưu ý 3 chiêu trò lừa đảo cho thuê phòng trọ, nhà trọ giá rẻ">Lưu ý 3 chiêu trò lừa đảo cho thuê phòng trọ, nhà trọ giá rẻ</a></li>
+                                    <li><a href="https://thuephongtro.com/kinh-nghiem/kinh-doanh-cho-thue-phong-tro-co-phai-dong-thue-gi-hay-khong-p28129.html" title="{Chia sẻ} Kinh doanh cho thuê phòng trọ có phải đóng thuế gì hay không?">{Chia sẻ} Kinh doanh cho thuê phòng trọ có phải đóng thuế gì hay không?</a></li>
+                                    <li><a href="https://thuephongtro.com/kinh-nghiem/nhung-dieu-can-luu-y-trong-viec-quan-ly-nha-tro-p28127.html" title="Những điều cần lưu ý trong việc quản lý nhà trọ">Những điều cần lưu ý trong việc quản lý nhà trọ</a></li>
+                                    <li><a href="https://thuephongtro.com/kinh-nghiem/can-than-khi-di-tim-thue-phong-tro-nha-tro-voi-sinh-vien-moi-p28123.html" title="Cẩn thận khi đi tìm thuê phòng trọ, nhà trọ với sinh viên mới">Cẩn thận khi đi tìm thuê phòng trọ, nhà trọ với sinh viên mới</a></li>
+                                    <li><a href="https://thuephongtro.com/kinh-nghiem/nhung-dieu-ban-nen-biet-de-bao-dam-quyen-loi-khi-di-thue-phong-tro-p28122.html" title="Những điều bạn nên biết để bảo đảm quyền lợi khi đi thuê phòng trọ">Những điều bạn nên biết để bảo đảm quyền lợi khi đi thuê phòng trọ</a></li>
+                                    <li><a href="https://thuephongtro.com/kinh-nghiem/luu-y-3-chieu-tro-lua-dao-cho-thue-phong-tro-nha-tro-gia-re-p28121.html" title="Lưu ý 3 chiêu trò lừa đảo cho thuê phòng trọ, nhà trọ giá rẻ">Lưu ý 3 chiêu trò lừa đảo cho thuê phòng trọ, nhà trọ giá rẻ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-3">
                             <div class="keyword_item">
-                                <h2><a href="#" title="Cho thuê phòng trọ">Cho thuê phòng trọ</a></h2>
+                                <h2><a href="" title="Cho thuê phòng trọ">Cho thuê phòng trọ</a></h2>
                                 <ul>
                                     <li>
                                         <a href="#" title="Cho thuê phòng trọ Hồ Chí Minh">Cho thuê phòng trọ Hồ Chí Minh</a>

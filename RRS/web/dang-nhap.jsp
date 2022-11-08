@@ -66,20 +66,9 @@
                             <li class="menu-item-has-children">
                                 <a href="DefaultServlet" rel="nofollow">Trang chủ</a>
                             </li>
+                            
                             <li class="menu-item-has-children">
-                                <a href="cho-thue-phong-tro.htm" rel="nofollow">Cho thuê phòng trọ</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="cho-thue-can-ho.htm" rel="nofollow">Cho thuê căn hộ</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="cho-thue-nha-nguyen-can.htm" rel="nofollow">Nhà nguyên căn</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="tim-nguoi-o-ghep.htm" rel="nofollow">Tìm người ở ghép</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#" rel="nofollow">Hướng dẫn</a>
+                                <a href="https://thuephongtro.com/huong-dan.html" rel="nofollow">Hướng dẫn</a>
                             </li>
                             <c:if test="${sessionScope.ACCOUNT != null}">
                                 <li>
